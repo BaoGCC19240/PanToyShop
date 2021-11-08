@@ -43,13 +43,13 @@ if(isset($_POST['btnUpdate'])){
 			$pass=md5($_POST['txtPass1']);
 
 			$sq="UPDATE customer
-			SET cust_name='$fullname',cust_address='$address',cust_tel='$telephone',password='$pass' WHERE username='".$_SESSION['us']."'";
+			SET cust_name='$fullname',cust_address='$address',cust_tel='$tel',password='$pass' WHERE username='".$_SESSION['us']."'";
 			pg_query($conn,$sq) or die(pg_error());
 		}
 		//Customer does not changes password
 		else {
 			$sq="UPDATE customer
-			SET cust_name='$fullname',cust_address='$address',cust_tel='$telephone' WHERE username='".$_SESSION['us']."'";
+			SET cust_name='$fullname',cust_address='$address',cust_tel='$tel' WHERE username='".$_SESSION['us']."'";
 			pg_query($conn,$sq) or die(pg_error());
 		}
 		echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
