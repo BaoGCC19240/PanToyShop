@@ -37,92 +37,7 @@
  <?php
  }
  ?>
-            </div>    
-   <!-- <div class="col-4">
-        <img src="images/product-6.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <p>$50.00</p>
-                <a href=""class="btn">View Detail &#8594;</a>
-       
-    </div>
-    <div class="col-4">
-        <img src="images/product-7.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-        </div>
-        <p>$50.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/product-8.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-        </div>
-        <p>$50.00</p>
-    </div>
-
-
-    <div class="col-4">
-        <img src="images/product-9.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-        </div>
-        <p>$50.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/product-10.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-            <i class="fa fa-star-o"></i>
-        </div>
-        <p>$50.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/product-11.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-        </div>
-        <p>$50.00</p>
-    </div>
-    <div class="col-4">
-        <img src="images/product-12.jpg">
-        <h4>Red Printed T-Shirt</h4>
-        <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-        </div>
-        <p>$50.00</p>
-    </div>
-</div>
-    </div>-->
-
-<!-- ------------------- brands --------------------- -->
+   
     <div class="brands">
         <div class="small-container">
             <div class="row">
@@ -144,3 +59,4 @@
             </div>
         </div>
     </div>
+</div>
