@@ -171,7 +171,7 @@
                 <div class="footer-col-3">
                     <h3>Useful Links</h3>
                     <ul>
-                        <li>Coupons</li>
+                        <li><?php echo $SESSION['us'];?>Coupons</li>
                         <li>Blog Post</li>
                         <li>Return Policy</li>
                         <li>Join Affiliate</li>
