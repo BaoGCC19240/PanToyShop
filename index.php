@@ -51,7 +51,7 @@
                         if(isset($_SESSION['us'])&&$_SESSION['us']!="")
                         {
                         ?>
-                        <li><a href=""><i class="fa fa-user" aria-hidden="true"> Hi, <?php echo $_SESSION['us'];?></i></a></li>
+                        <li><a href=""><i class="fa fa-user" aria-hidden="true"> Hi, <?php echo $_SESSION['admin'];?></i></a></li>
                         <li><a href=""><i class="fa fa-sign-out" aria-hidden="true"> Logout</i></a></li>
                         <?php
                         }
