@@ -1,6 +1,23 @@
 
 <?php
+
 include_once('connection.php');
+
+//Write check() function to check information
+function check(){
+	if($_POST['txtFullname']==""||$_POST['txtAddress']==""){
+		return "<li>Enter Fullname or Address</li>";
+	}
+	elseif(strlen($_POST['txtPass1'])>0 && strlen($_POST['txtPass1'])<=5){
+		return "<li>Password is greater than 5 characters</li>";
+	}
+	elseif($_POST['txtPass1'] && $_POST['txtPass1']){
+		return "<li>Password and confirm Password do not match</li>";
+	}
+	else {
+		return"";
+	}
+}
 //Get custmer information
 $query = "SELECT custname, cust_address, cust_email, cust_tel
 FROM customer WHERE username ='".$_SESSION['us']."'";
@@ -42,21 +59,7 @@ if(isset($_POST['btnUpdate'])){
 }
 
 
-//Write check() function to check information
-function check(){
-	if($_POST['txtFullname']==""||$_POST['txtAddress']==""){
-		return "<li>Enter Fullname or Address</li>";
-	}
-	elseif(strlen($_POST['txtPass1'])>0 && strlen($_POST['txtPass1'])<=5){
-		return "<li>Password is greater than 5 characters</li>";
-	}
-	elseif($_POST['txtPass1'] && $_POST['txtPass1']){
-		return "<li>Password and confirm Password do not match</li>";
-	}
-	else {
-		return"";
-	}
-}
+
 
 ?>
 <div class="container">
