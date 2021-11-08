@@ -1,4 +1,5 @@
 <?php
+include_once('connection.php');
 //Get custmer information
 $query = "SELECT custname, cust_address, cust_email, cust_tel 
 FROM customer WHERE username ='" . $_SESSION["us"]."'";
