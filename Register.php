@@ -10,19 +10,19 @@
  if(isset($_POST['btnRegister']))
  {
      $us=$_POST['txtUsername'];
+     $fullname=$_POST['txtFullname'];
      $pass1=$_POST['txtPass1'];
      $pass2=$_POST['txtPass2'];
-     $fullname=$_POST['txtFullname'];
      $email=$_POST['txtEmail'];
-     $address=$_POST['txtAddress'];
      $tel=$_POST['txtTel'];
+     $address=$_POST['txtAddress'];
+
      if(isset($_POST['grpRender']))
      {
          $sex=$_POST['grpRender'];
      }
-
-     $err="";
-     if($us==""||$pass1==""||$pass2==""||$fullname==""||$email=="" ||$address==""||!isset($sex))
+          $err="";
+          if($us==""||$fullname==""||$pass1==""||$pass2==""||$email=="" ||$address==""||!isset($sex))
      {
          $err.="<li>Enter fields with mark(*),please</li>";
      }
@@ -38,10 +38,10 @@
     else{
         include_once('connection.php');
         $pass=md5($pass1);
-        $sq="select * from customer where Username='$us' or Cus_Email='$email'";
+        $sq="select * from customer where username='$us' or cust_email='$email'";
         $res=pg_query($conn,$sq);
         if(pg_num_rows($res)==0){
-            pg_query($conn,"Insert into customer (username, cust_name, password, cust_email, cust_tel, Cust_address, gender, state) values('$us','$fullname','$pass','$email','$tel','$address','$sex',0)")
+            pg_query($conn,"Insert into customer (username, cust_name, password, cust_email, cust_tel, cust_address, gender, state) values('$us','$fullname','$pass','$email','$tel','$address','$sex',0)")
             or die(pg_error());
             echo"You have registered successfully";
         }
