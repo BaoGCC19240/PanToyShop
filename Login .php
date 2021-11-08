@@ -21,7 +21,7 @@ if(isset($_POST['btnLogin'])){
         include_once("connection.php");
         $us=pg_escape_string($us);
         $pass=md5("$pa");
-        $sq = "Select username, password, state from customer where Username='$us' and Password='$pass'";
+        $sq = "Select username, password, state from customer where username='$us' and password='$pass'";
         $res= pg_query($conn,$sq);
         $check = pg_num_rows($res);
         $row = pg_fetch_row($res);
