@@ -6,7 +6,7 @@
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/dataTables.bootstrap.min.js"></script>
 <div id="top">
- <?php
+    <?php
  if(isset($_POST['btnRegister']))
  {
      $us=$_POST['txtUsername'];
@@ -41,7 +41,7 @@
         $sq="select * from customer where Username='$us' or Cus_Email='$email'";
         $res=pg_query($conn,$sq);
         if(pg_num_rows($res)==0){
-            pg_query($conn,"Insert into customer (Username, Password, CustName,Gender,Cus_Address,Cus_Tel,Cus_Email, State) values('$us','$pass','$fullname','$sex','$address','$tel','$email',0)")
+            pg_query($conn,"Insert into customer (Username, CustName, Password, Cus_Email, Cus_Tel, Cus_Address, Gender, State) values('$us','$fullname','$pass','$email','$tel','$address','$sex',0)")
             or die(pg_error($conn));
             echo"You have registered successfully";
         }
@@ -50,7 +50,7 @@
         }
     }
  }
- ?>
+    ?>
 <div class="container">
         <h2>Member Registration</h2>
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
