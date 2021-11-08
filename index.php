@@ -69,22 +69,8 @@
                 <img src="images/menu.png" class="menu-icon"
                      onclick="menutoggle()">
             </div>
-            <?php 
-            include_once('connection.php');
-    if(isset($_GET['page'])){
-        $page=$_GET['page'];
-            if($page=="Content.php"){
-
-            } 
-            else{
-            ?>
+            </div>
         </div>
-    </div>
-    <?php
-    }}?>
-
-
-    <?php
     include_once('connection.php');
     if(isset($_GET['page'])){
         $page=$_GET['page'];
