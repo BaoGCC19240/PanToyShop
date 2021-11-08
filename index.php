@@ -142,7 +142,7 @@
     }
     else
     {
-        include_once('Content.php');
+        include_once('content.php');
     }
     ?>
     
