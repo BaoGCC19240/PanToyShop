@@ -71,14 +71,14 @@ if(isset($_POST['btnUpdate'])){
 						    
                             <label for="lblTenDangNhap" class="col-sm-2 control-label">Username(*):  </label>
 							<div class="col-sm-10">
-							      <label class="form-control" style="font-weight:400"><?php echo $us;  ?></label>
+                                <input type="text"  id="txtAddress" value="<?php  echo $us;  ?>" class="form-control" />
 							</div>
                      </div>
                            
                          <div class="form-group">   
                             <label for="lblEmail" class="col-sm-2 control-label">Email(*):  </label>
 							<div class="col-sm-10">
-							       <label class="form-control" style="font-weight:400"><?php echo $email;  ?></label>
+                                <input type="text" id="txtAddress" value="<?php  echo $email;  ?>" class="form-control"/>
 							</div>
                           </div>  
                           
