@@ -18,7 +18,7 @@ if(isset($_POST['btnLogin'])){
         echo $err;
    }
     else{
-        include_once("connection.php");
+        include_once('connection.php');
         $us=pg_escape_string($us);
         $pass=md5("$pa");
         $sq = "Select username, password, state from customer where username='$us' and password='$pass'";

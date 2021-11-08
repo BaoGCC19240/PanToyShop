@@ -36,7 +36,7 @@
         echo $err;
     }
     else{
-        include_once("connection.php");
+        include_once('connection.php');
         $pass=md5($pass1);
         $sq="select * from customer where Username='$us' or Cus_Email='$email'";
         $res=pg_query($conn,$sq);
