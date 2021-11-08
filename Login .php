@@ -24,11 +24,11 @@ if(isset($_POST['btnLogin'])){
         $sq = "Select username, password, state from customer where username='$us' and password='$pass'";
         $res= pg_query($conn,$sq);
         $check = pg_num_rows($res);
-        $row = pg_fetch_row($res);
+        $row = pg_fetch_array($res,null,PGSQL_ASSOC);
         if($check==1)
         {
             $_SESSION['us']=$us;
-            $_SESSION['admin']=$row[2];
+            $_SESSION['admin']=$row['username'];
             echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
 
         }
