@@ -20,8 +20,8 @@
     <?php
     include_once('connection.php');
     $sq= "Select * from product";
-    $res = mysqli_query($conn,$sq);
-    while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)){
+    $res = pg_query($conn,$sq);
+    while($row = pg_fetch_array($res, PGSQL_ASSOC)){
     ?>
     <div class="col-4">
                    
