@@ -19,14 +19,14 @@ function check(){
 	}
 }
 //Get custmer information
-$query = "SELECT custname, cust_address, cust_email, cust_tel
+$query = "SELECT cust_name, cust_address, cust_email, cust_tel
 FROM customer WHERE username ='".$_SESSION['us']."'";
 $result = pg_query($conn,$query);
 $row = pg_fetch_array($result,null,PGSQL_ASSOC);
 
 $us = $_SESSION['us'];
 $email = $row['cust_email'];
-$fullname=$row['custname'];
+$fullname=$row['cust_name'];
 $address=$row['cust_address'];
 $telephone=$row['cust_tel'];
 
@@ -43,13 +43,13 @@ if(isset($_POST['btnUpdate'])){
 			$pass=md5($_POST['txtPass1']);
 
 			$sq="UPDATE customer
-			SET custname='$fullname',cust_address='$address',cust_tel='$telephone',password='$pass' WHERE username='".$_SESSION['us']."'";
+			SET cust_name='$fullname',cust_address='$address',cust_tel='$telephone',password='$pass' WHERE username='".$_SESSION['us']."'";
 			pg_query($conn,$sq) or die(pg_error());
 		}
 		//Customer does not changes password
 		else {
 			$sq="UPDATE customer
-			SET custname='$fullname',cust_address='$address',cust_tel='$telephone',password='$pass' WHERE username='".$_SESSION['us']."'";
+			SET cust_name='$fullname',cust_address='$address',cust_tel='$telephone',password='$pass' WHERE username='".$_SESSION['us']."'";
 			pg_query($conn,$sq) or die(pg_error());
 		}
 		echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
