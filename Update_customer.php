@@ -5,13 +5,13 @@ include_once('connection.php');
 $query = "SELECT custname, cust_address, cust_email, cust_tel
 FROM customer WHERE username ='".$_SESSION['us']."'";
 $result = pg_query($conn,$query);
-$row = pg_fetch_array($result,0,PGSQL_NUM);
+$row = pg_fetch_array($result,null,PGSQL_ASSOC);
 
 $us = $_SESSION["us"];
-$email = $row[2];
-$fullname=$row[0];
-$address=$row[1];
-$telephone=$row[3];
+$email = $row['cust_email'];
+$fullname=$row['custname'];
+$address=$row['cust_address'];
+$telephone=$row['cust_tel'];
 
 //Update information when the user presses the "Update" button
 if(isset($_POST['btnUpdate'])){
