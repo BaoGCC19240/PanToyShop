@@ -17,7 +17,23 @@
 
 <h2 class="title">Latest Products</h2>
 <div class="row">
+    <?php
+    include_once('connection.php');
+    $sq= "Select * from product";
+    $res = mysqli_query($conn,$sq);
+    while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)){
+    ?>
+    <div class="col-4">
+                   
+        <img src="images/product-5.jpg">
+        <h4><?php echo $row['Pro_Name'];?></h4>
+        <p>$<?php echo $row['Pro_Price'];?></p>
+        <a href="add.php?id=<?php echo $row['Pro_ID'];?>&action=add&page=index" class="btn">Buy Now &#8594;</a>
+    </div>
 
+ <?php
+ }
+ ?>
    
     <div class="brands">
         <div class="small-container">
