@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
 
 <body>
 
+ 
     <div class="header">
         <div class="container">
             <div class="navbar">
@@ -21,7 +23,7 @@
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="?page=product.php">Products</a></li>
+                        <li><a href="?page=product">Products</a></li>
                         <?php
                         if(!isset($_SESSION['admin']) or $_SESSION['admin']==0)
                         {
@@ -63,7 +65,7 @@
                         ?>
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <a href="?page=cart"><img src="images/cart.png" width="30px" height="30px"></a>
                 <img src="images/menu.png" class="menu-icon"
                      onclick="menutoggle()">
             </div>
@@ -82,7 +84,7 @@
     }}?>
 
 
-	<?php
+    <?php
     include_once('connection.php');
     if(isset($_GET['page'])){
         $page=$_GET['page'];
@@ -131,36 +133,21 @@
         if($page=="viewdetail"){
             include_once('viewdetail.php');
         }
+        if($page=="add"){
+            include_once('add.php');
+        }
+        if($page=="cart"){
+            include_once('cart.php');
+        }
     }
     else
     {
         include_once('Content.php');
     }
-	?>
+    ?>
     
     
-    <!-- ------------------- brands --------------------- -->
-    <div class="brands">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-5">
-                    <img src="images/Apan.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/jokejolly.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/bandai.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/marvel.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/loz.png">
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- ------------footer----------- -->
 
     <div class="footer">

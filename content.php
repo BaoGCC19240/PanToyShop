@@ -14,25 +14,36 @@
             </div>
 
             </div>
-<?php
-include_once('connection.php');
-$sq= "Select * from product";
-$res = mysqli_query($conn,$sq);
-$row =mysqli_fetch_array($res, MYSQLI_ASSOC);
-?>
+
 <h2 class="title">Latest Products</h2>
 <div class="row">
+    <?php
+    include_once('connection.php');
+    $sq= "Select * from product";
+    $res = mysqli_query($conn,$sq);
+    while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)){
+    ?>
     <div class="col-4">
+                   
         <img src="images/product-5.jpg">
         <h4><?php echo $row['Pro_Name'];?></h4>
         <p>$<?php echo $row['Pro_Price'];?></p>
-        <a href="" class="btn">View Detail &#8594;</a>
+        <a href="add.php?id=<?php echo $row['Pro_ID'];?>&action=add&page=index" class="btn">Buy Now &#8594;</a>
+
+
+
     </div>
-    <div class="col-4">
+
+ <?php
+ }
+ ?>
+            </div>    
+   <!-- <div class="col-4">
         <img src="images/product-6.jpg">
         <h4>Red Printed T-Shirt</h4>
         <p>$50.00</p>
-                <a href="?page=viewdetail" class="btn">View Detail &#8594;</a>
+                <a href=""class="btn">View Detail &#8594;</a>
+       
     </div>
     <div class="col-4">
         <img src="images/product-7.jpg">
@@ -109,4 +120,27 @@ $row =mysqli_fetch_array($res, MYSQLI_ASSOC);
         <p>$50.00</p>
     </div>
 </div>
+    </div>-->
+
+<!-- ------------------- brands --------------------- -->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="images/Apan.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/jokejolly.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/bandai.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/marvel.png">
+                </div>
+                <div class="col-5">
+                    <img src="images/loz.png">
+                </div>
+            </div>
+        </div>
     </div>

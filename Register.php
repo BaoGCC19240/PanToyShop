@@ -41,7 +41,7 @@
         $sq="select * from customer where Username='$us' or email='$email'";
         $res=mysqli_query($conn,$sq);
         if(mysqli_num_rows($res)==0){
-            mysqli_query($conn,"Insert into customer (Username, Password, CustName,gender,Address,telephone,email, state) values('$us','$pass','$fullname','$sex','$address','$tel','$email','$date',0)")
+            mysqli_query($conn,"Insert into customer (Username, Password, CustName,gender,Address,telephone,email, state) values('$us','$pass','$fullname','$sex','$address','$tel','$email',0)")
             or die(mysqli_error($conn));
             echo"You have registered successfully";
         }

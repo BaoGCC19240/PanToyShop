@@ -1,5 +1,4 @@
-    <!-- ---------- single Products detail ----------- -->
-
+    <!-- ---------- single Products detail ----------- -->s
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
@@ -23,7 +22,7 @@
             </div>
             <div class="col-2">
                 <p>Home / T-Shirt</p>
-                <h1>Red Printd T-Shirt by Huy</h1>
+                <h1><?php echo $row['Pro_Name']?></h1>
                 <h4>$50.00</h4>
                     <input type="number" value="1">
                     <a href="?page=cart?id= <?php ?>" class="btn">Add To Card</a>
