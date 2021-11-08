@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <div id="top">
-<?php
+    <?php
 if(isset($_POST['btnLogin'])){
     $us =$_POST['txtUsername'];
     $pa=$_POST['txtPass'];
@@ -21,7 +21,7 @@ if(isset($_POST['btnLogin'])){
         include_once("connection.php");
         $us=pg_escape_string($us);
         $pass=md5("$pa");
-        $sq = "Select 'Username', 'Password', 'State' from public.'Customer' where Username='$us' and Password='$pass'";
+        $sq = "Select username, password, state from customer where Username='$us' and Password='$pass'";
         $res= pg_query($conn,$sq);
         $check = pg_num_rows($res);
         $row = pg_fetch_row($res);
@@ -39,7 +39,7 @@ if(isset($_POST['btnLogin'])){
     }
 }
 
-?>
+    ?>
 
 <form id="form1" name="form1" method="POST">
 
