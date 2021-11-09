@@ -26,7 +26,7 @@
 			$des=htmlspecialchars(pg_escape_string($conn,$des));
 			$sq="Select * from category where Cat_ID='$id' or Cat_Name='$name'";
 			$result=pg_query($conn,$sq);
-			/*if(pg_num_rows($result)==0)
+			if(pg_num_rows($result)==0)
 			{
 				pg_query($conn,"INSERT INTO category (Cat_ID, Cat_Name,Cat_Des)
 				VALUES ('$id','$name','$des')");
@@ -35,7 +35,7 @@
 			else
 			{
 				echo "<li>Duplication category ID or Name</li>";
-			}*/
+			}
 		}
 
 	}
