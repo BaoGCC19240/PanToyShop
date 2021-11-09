@@ -21,13 +21,13 @@
     include_once('connection.php');
     $sq= "Select * from product";
     $res = pg_query($conn,$sq);
-    while($row = pg_fetch_array($res, PGSQL_ASSOC)){
+    while($row = pg_fetch_array($res)){
     ?>
     <div class="col-4">
                    
-        <img src="images/product-5.jpg">
-        <h4><?php echo $row['Pro_Name'];?></h4>
-        <p>$<?php echo $row['Pro_Price'];?></p>
+        <img src="<?php echo $row['pro_image'];?>">
+        <h4><?php echo $row['pro_name'];?></h4>
+        <p>$<?php echo $row['pro_price'];?></p>
         <a href="add.php?id=<?php echo $row['Pro_ID'];?>&action=add&page=index" class="btn">Buy Now &#8594;</a>
     </div>
 
