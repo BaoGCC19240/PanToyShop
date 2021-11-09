@@ -13,7 +13,10 @@
                         <strong>Shop Name</strong>
                     </th>
                     <th align="center">
-                        <strong>Description</strong>
+                        <strong>Address</strong>
+                    </th>
+                    <th align="center">
+                        <strong>Tel</strong>
                     </th>
                     <th align="center">
                         <strong>Edit</strong>
