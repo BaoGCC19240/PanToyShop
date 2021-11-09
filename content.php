@@ -24,7 +24,7 @@
     while($row = pg_fetch_array($res)){
     ?>
     <div class="col-4">
-                   
+         var_dump($row['pro_image'])  ;
         <img src="images/<?php echo $row['pro_image'];?>">
         <h4><?php echo $row['pro_name'];?></h4>
         <p>$<?php echo $row['pro_price'];?></p>
