@@ -45,8 +45,8 @@
             {
                 ?>
 			<tr>
-              <td class="cotCheckBox"><?php echo $No;?></td>
-                <td class="cotCheckBox">
+              <td align="center"><?php echo $No;?></td>
+                <td align="center">
                     <?php echo $row['cat_name']; ?>
                 </td>
               
