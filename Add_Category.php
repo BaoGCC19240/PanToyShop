@@ -22,7 +22,6 @@
 		}
 		else{
 			$id=htmlspecialchars(pg_escape_string($conn,$id));
-			var_dump($id);
 			$name=htmlspecialchars(pg_escape_string($conn,$name));
 			$des=htmlspecialchars(pg_escape_string($conn,$des));
 			$sq="Select * from category where Cat_ID='$id' or Cat_Name='$name'";
