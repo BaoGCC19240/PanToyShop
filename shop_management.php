@@ -70,7 +70,7 @@
                     <?php echo $row['shop_tel']; ?>
                 </td>
 
-              <td style='text-align:center'><a href="?page=update_category&&id=<?php echo $row['shop_id'];?>"><img src='images/edit.png' border='0' /></a></td>
+              <td style='text-align:center'><a href="?page=update_shop&&id=<?php echo $row['shop_id'];?>"><img src='images/edit.png' border='0' /></a></td>
               <td style='text-align:center'>
               <a href="?page=shop_management&&function=del&&id=<?php echo $row['shop_id']; ?>" onclick="return deleteConfirm()">
               <img src='images/delete.png' border='0' /></td>

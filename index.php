@@ -148,6 +148,9 @@
          if($page=="add_shop"){
              include_once('add_shop.php');
          }
+         if($page=="update_shop"){
+             include_once('update_shop.php');
+         }
     }
     else
     {
