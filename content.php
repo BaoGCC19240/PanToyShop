@@ -25,7 +25,7 @@
     ?>
     <div class="col-4">
                    
-        <img src="<?php echo $row['pro_image'];?>">
+        <img src="images/<?php echo $row['pro_image'];?>">
         <h4><?php echo $row['pro_name'];?></h4>
         <p>$<?php echo $row['pro_price'];?></p>
         <a href="add.php?id=<?php echo $row['Pro_ID'];?>&action=add&page=index" class="btn">Buy Now &#8594;</a>
