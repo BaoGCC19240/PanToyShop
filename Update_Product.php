@@ -3,7 +3,7 @@
 	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="./scripts/ckeditor/ckeditor.js"></script>
 	<div id="top">
-        <?php
+        <?php/*
 	include_once("connection.php");
 	if(isset($_POST["btnUpdate"]))
 	{
@@ -99,8 +99,8 @@
 				}
 			}
 		}
-	}
-        ?>
+	}*/
+            ?>-
         <?php
 	include_once("connection.php");
 	Function bind_Category_List($conn,$selectedValue){
