@@ -43,11 +43,11 @@
             $result =pg_query($conn,"Select * from category");
             while($row=pg_fetch_array($result))
             {
-                var_dump($row['Cat_Name'])
+                var_dump($row['Cat_ID'])
                 ?>
 			<tr>
               <td class="cotCheckBox"><?php echo $No;?></td>
-              <td><?php echo $row["Cat_Name"]; ?></td>
+              <td><?php echo $row['Cat_ID']; ?></td>
               
               <td><?php echo $row['Cat_Des']; ?></td>
 
