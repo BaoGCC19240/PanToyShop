@@ -2,27 +2,37 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
 	<div id="top">
-<?php
+        <?php
 	include_once("connection.php");
 		function bind_Category_List($conn){
 			$sqlstring ="select Cat_ID, Cat_Name from category";
-			$result =mysqli_query($conn,$sqlstring);
+			$result =pg_query($conn,$sqlstring);
 			echo "<select name='CategoryList' class='from-control'>
 			<option value='0'>Choose category</option>";
-			while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
-				echo "<option value='".$row['Cat_ID']."'>".$row['Cat_Name']."</option>";
+			while($row=pg_fetch_array($result)){
+				echo "<option value='".$row['cat_id']."'>".$row['cat_name']."</option>";
+			}
+			echo "</select>";
+		}
+		function bind_Shop_List($conn){
+			$sqlstring ="select Shop_ID, Shop_Name from shop";
+			$result =pg_query($conn,$sqlstring);
+			echo "<select name='ShopList' class='from-control'>
+			<option value='0'>Choose Shop</option>";
+			while($row=pg_fetch_array($result)){
+				echo "<option value='".$row['shop_id']."'>".$row['shop_name']."</option>";
 			}
 			echo "</select>";
 		}
 		if(isset($_POST['btnAdd'])){
 			$id =$_POST['txtID'];
 			$proname =$_POST['txtName'];
-			$short =$_POST['txtShort'];
 			$detail =$_POST['txtDetail'];
 			$price =$_POST['txtPrice'];
 			$qty =$_POST['txtQty'];
 			$pic =$_FILES['txtImage'];
 			$category =$_POST['CategoryList'];
+			$shop =$_POST['ShopList'];
 			$err="";
 			if(trim($id)==""){
 				$err.="<li>Enter product ID,please</li>";
@@ -36,6 +46,9 @@
 			if(!is_numeric($qty)){
 				$err.="<li>Product qty must be number,please</li>";
 			}
+			if(trim($shop)==""){
+				$err.="<li>Enter Shop ID,please</li>";
+			}
 			if($err!=""){
 				echo "<ul>$err</ul>";
 			}
@@ -44,15 +57,15 @@
 					if($pic['size']<=614400)
 					{
 
-						$sq="select * from product where Product_ID='$id' or Product_Name='$proname'";
-						$result=mysqli_query($conn,$sq);
-						if(mysqli_num_rows($result)==0)
+						$sq="select * from product where Pro_ID='$id' or Pro_Name='$proname'";
+						$result=pg_query($conn,$sq);
+						if(pg_num_rows($result)==0)
 						{
 							copy($pic['tmp_name'], "image/".$pic['name']);
 							$filePic=$pic['name'];
-							$sqlstring="insert into product( Product_ID, Product_Name, Price,SmallDesc, DetailDesc, ProDate, Pro_qty, Pro_image, Cat_ID)
-							values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."','$qty','$filePic','$category')";
-							mysqli_query($conn,$sqlstring);
+							$sqlstring="insert into product( Pro_ID, Pro_Name, Pro_Price,Pro_Desc, Pro_qty, Pro_image, Cat_ID, Shop_id)
+							values('$id','$proname','$price','$detail','$qty','$filePic','$category','$shop')";
+							pg_query($conn,$sqlstring);
 							echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 						}
 						else
@@ -72,7 +85,7 @@
 			}
 
 		}
-?>
+        ?>
 <div class="container">
 	<h2>Adding new Product</h2>
 
@@ -95,6 +108,12 @@
 							      <?php bind_Category_List($conn);  ?>
 							</div>
                 </div>  
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Product Shop(*):  </label>
+                <div class="col-sm-10">
+                    <?php bind_Shop_List($conn);  ?>
+                </div>
+            </div>
                           
                 <div class="form-group">  
                     <label for="lblGia" class="col-sm-2 control-label">Price(*):  </label>
@@ -103,12 +122,7 @@
 							</div>
                  </div>   
                             
-                <div class="form-group">   
-                    <label for="lblShort" class="col-sm-2 control-label">Short description(*):  </label>
-							<div class="col-sm-10">
-							      <input type="text" name="txtShort" id="txtShort" class="form-control" placeholder="Short description" value=''/>
-							</div>
-                </div>
+               
                             
                 <div class="form-group">  
         	        <label for="lblDetail" class="col-sm-2 control-label">Detail description(*):  </label>
