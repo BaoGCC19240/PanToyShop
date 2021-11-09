@@ -47,7 +47,7 @@
                 ?>
 			<tr>
               <td class="cotCheckBox"><?php echo $No;?></td>
-              <td><?php echo $row[1]; ?></td>
+              <td><?php echo $row['cat_name']; ?></td>
               
               <td><?php echo $row[2]; ?></td>
 
