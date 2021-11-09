@@ -61,7 +61,7 @@
 						$result=pg_query($conn,$sq);
 						if(pg_num_rows($result)==0)
 						{
-							copy($pic['tmp_name'], "images/" .$pic['name']);
+							copy($pic['tmp_name'], 'images/' .$pic['name']);
 							$filePic=$pic['name'];
 							$sqlstring="insert into product( Pro_ID, Pro_Name, Pro_Price,Pro_Desc, Pro_qty, Pro_image, Cat_ID, Shop_id)
 							values('$id','$proname','$price','$detail','$qty','$filePic','$category','$shop')";
