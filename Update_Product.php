@@ -135,11 +135,11 @@
         }
 		echo "</select>";
 	}
-	if(isset($_GET["id"]))
+	if(isset($_GET['id']))
 	{
-		$id= $_GET["id"];
+		$id= $_GET['id'];
 		$sqlstring = "SELECT pro_name, pro_price, pro_desc, pro_qty, pro_image, cat_id, shop_id
-		FROM product WHERE Product_ID = '$id' ";
+		FROM product WHERE pro_id = '$id' ";
 
 		$result = pg_query($conn, $sqlstring);
 		$row = pg_fetch_array($result);
