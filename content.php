@@ -24,7 +24,7 @@
     while($row = pg_fetch_array($res)){
     ?>
     <div class="col-4">
-        <img src="images/<?php echo $row['pro_image'];?>">
+        <img src="images/<?php echo $row['pro_image'];?> " width="300" height="300">
         <h4><?php echo $row['pro_name'];?></h4>
         <p>$<?php echo $row['pro_price'];?></p>
         <a href="add.php?id=<?php echo $row['Pro_ID'];?>&action=add&page=index" class="btn">Buy Now &#8594;</a>
