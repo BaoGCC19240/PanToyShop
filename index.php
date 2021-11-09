@@ -145,6 +145,9 @@
          if($page=="shop_management"){
              include_once('shop_management.php');
         }
+         if($page=="add_shop"){
+             include_once('add_shop.php');
+         }
     }
     else
     {
