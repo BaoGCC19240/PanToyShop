@@ -3,7 +3,7 @@
 	<script type="text/javascript" src="scripts/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="./scripts/ckeditor/ckeditor.js"></script>
 	<div id="top">
-        <?php/*
+        <?php
 	include_once("connection.php");
 	if(isset($_POST["btnUpdate"]))
 	{
@@ -88,7 +88,7 @@
 				if(pg_num_rows($result)==0)
 				{
 					$sqlstring="UPDATE product SET pro_name='$proname',
-					pro_price=$price, pro_desc='$detail',Pro_qty=$qty,
+					pro_price='$price', pro_desc='$detail',Pro_qty=$qty,
 					Cat_ID='$category', shop_id = '$shop' WHERE pro_id='$id'";
 					pg_query($conn,$sqlstring);
 					echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
@@ -99,25 +99,25 @@
 				}
 			}
 		}
-	}*/
-            ?>-
+	}
+        ?>-
         <?php
 	include_once("connection.php");
 	Function bind_Category_List($conn,$selectedValue){
-		$sqlstring="SELECT Cat_ID, Cat_Name FROM category";
+		$sqlstring="SELECT cat_id, cat_name FROM category";
 		$result = pg_query($conn, $sqlstring);
 		echo "<select name='CategoryList' class='form-control'>
 			<option value='0'>Chose category</option>";
-			while ($row = pg_fetch_array($result)){
-				if($row['cat_id'] == $selectedValue)
-				{
-					echo "<option value='".$row['cat_id']."' selected>".$row['cat_name']."</option>";
-				}
-				else{
-					echo "<option value='".$row['cat_id']."'>".$row['cat_name']."</option>";
-				}
-			}
-            echo "</select>";
+        while ($row = pg_fetch_array($result)){
+            if($row['cat_id'] == $selectedValue)
+            {
+                echo "<option value='".$row['cat_id']."' selected>".$row['cat_name']."</option>";
+            }
+            else{
+                echo "<option value='".$row['cat_id']."'>".$row['cat_name']."</option>";
+            }
+        }
+		echo "</select>";
 	}
 	Function bind_Shop_List($conn,$selectedValue){
 		$sqlstring="SELECT shop_id, shop_name FROM shop";
@@ -180,7 +180,7 @@
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">Product Shop(*):  </label>
                 <div class="col-sm-10">
-                    <?php bind_Shop_List($conn,$category); ?>
+                    <?php bind_Shop_List($conn,$shop); ?>
                 </div>
             </div>
                           
