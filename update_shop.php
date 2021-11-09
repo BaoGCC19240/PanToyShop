@@ -3,77 +3,92 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<div id="top">
-   <?php
+        <?php
     include_once("connection.php");
 	if(isset($_GET["id"]))
 	{
 		$id=$_GET["id"];
-		$result = pg_query($conn,"Select * from category Where Cat_ID='$id'");
+		$result = pg_query($conn,"Select * from shop Where shop_ID='$id'");
 		$row=pg_fetch_array($result);
-		$cat_id=$row['cat_id'];
-		$cat_name=$row['cat_name'];
-		$cat_des=$row['cat_desc'];
-	?>
-		<?php
+		$shop_id=$row['shop_id'];
+		$shop_name=$row['shop_name'];
+		$shop_address=$row['shop_address'];
+		$shop_tel=$row['shop_tel'];
+        ?>
+        <?php
    if(isset($_POST["btnUpdate"]))
    {
 	   $id=$_POST["txtID"];
 	   $name=$_POST["txtName"];
-	   $des=$_POST["txtDes"];
+	   $address=$_POST["txtAddress"];
+	   $tel=$_POST["txtTel"];
 	   $err="";
 	   if($name==""){
-		   $err.="Enter Category Name, please";
+		   $err.="Enter Shop Name, please";
+	   }
+	   if($address==""){
+		   $err.="Enter Shop Address, please";
+	   }
+	   if($tel==""){
+		   $err.="Enter Shop Telephone, please";
 	   }
 	   if($err!=""){
 		   echo "<ul>$err</ul>";
 	   }
 	   else
 	   {
-		   $sq="select * from category where Cat_ID !='$id' and Cat_Name='$name'";
+		   $sq="select * from shop where Shop_ID !='$id' and Shop_Name='$name'";
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
-			   pg_query($conn,"UPDATE category Set Cat_Name ='$name',Cat_Desc='$des' where Cat_ID='$id'");
-			   echo '<meta http-equiv="refresh" content="0,URL=?page=category_management"/>';
+			   pg_query($conn,"UPDATE shop Set Shop_Name ='$name',Shop_address='$des' ,Shop_tel ='$tel' where Shop_ID='$id'");
+			   echo '<meta http-equiv="refresh" content="0,URL=?page=shop_management"/>';
 		   }
 		   else
 		   {
-			   echo "<li>Duplication category Name</li>";
+			   echo "<li>Duplication Shop Name</li>";
 		   }
 	   }
    }
-     ?>  
+        ?>  
 <div class="container">
 	<h2>Updating Product Category</h2>
 
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
 				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Category ID(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Shop ID(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Catepgy ID" readonly 
-								  value='<?php echo $cat_id;?>'>
+								  value='<?php echo $shop_id;?>'>
 							</div>
 					</div>	
 				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Category Name(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Shop Name(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Catepgy Name" 
-								  value='<?php echo $cat_name;?>'>
+								  value='<?php echo $shop_name;?>'>
 							</div>
 					</div>
                     
                     <div class="form-group">
-						    <label for="txtMoTa" class="col-sm-2 control-label">Description(*):  </label>
+						    <label for="txtMoTa" class="col-sm-2 control-label">Shop Address(*):  </label>
 							<div class="col-sm-10">
-								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" 
-								  value='<?php echo $cat_des; ?>'>
+								  <input type="text" name="txtAddress" id="txtDes" class="form-control" placeholder="Shop Address" 
+								  value='<?php echo $shop_address; ?>'>
 							</div>
 					</div>
+                  <div class="form-group">
+                      <label for="txtMoTa" class="col-sm-2 control-label">Shop Tel(*):  </label>
+                      <div class="col-sm-10">
+                          <input type="text" name="txtTel" id="txtTel" class="form-control" placeholder="Shop Telephone"
+                              value='<?php echo $shop_tel; ?>' />
+                      </div>
+                  </div>
                     
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 						      <input type="submit"  class="btn btn-primary" name="btnUpdate" id="btnUpdate" value="Update"/>
-                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=category_management'" />
+                              <input type="button" class="btn btn-primary" name="btnIgnore"  id="btnIgnore" value="Ignore" onclick="window.location='?page=shop_management'" />
                               	
 						</div>
 					</div>
