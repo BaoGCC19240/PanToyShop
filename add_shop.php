@@ -52,13 +52,13 @@
 	<h2>Adding Category</h2>
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
 				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Category ID(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Shop ID(*):  </label>
 							<div class="col-sm-10">
 							      <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Shop ID" value='<?php echo isset($_POST["txtID"])?($_POST["txtID"]):"";?>'>
 							</div>
 					</div>	
 				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Category Name(*):  </label>
+						    <label for="txtTen" class="col-sm-2 control-label">Shop Name(*):  </label>
 							<div class="col-sm-10">
 							      <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Shop Name" value='<?php echo isset($_POST["txtName"])?($_POST["txtName"]):"";?>'>
 							</div>
@@ -73,7 +73,7 @@
                   <div class="form-group">
                       <label for="txtMoTa" class="col-sm-2 control-label">Telephone(*):  </label>
                       <div class="col-sm-10">
-                          <input type="text" name="txtDes" id="txtTel" class="form-control" placeholder="Shop Telephone" value='<?php echo isset($_POST["txtTel"])?($_POST["txtTel"]):"";?>' />
+                          <input type="text" name="txtTel" id="txtTel" class="form-control" placeholder="Shop Telephone" value='<?php echo isset($_POST["txtTel"])?($_POST["txtTel"]):"";?>' />
                       </div>
                   </div>
                     
