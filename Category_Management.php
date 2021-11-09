@@ -37,17 +37,18 @@
                 }
             } 
             ?>
-            <?php
+                <?php
             include_once("connection.php");
             $No=1;
             $result =pg_query($conn,"Select * from category");
             while($row=pg_fetch_array($result,null,PGSQL_ASSOC))
             {
-            ?>
+                var_dump($row["Cat_Name"])
+                ?>
 			<tr>
               <td class="cotCheckBox"><?php echo $No;?></td>
               <td><?php echo $row["Cat_Name"]; ?></td>
-              var_dump($row["Cat_Name"]);
+              
               <td><?php echo $row['Cat_Des']; ?></td>
 
               <td style='text-align:center'><a href="?page=update_category&&id=<?php echo $row['cat_id'];?>"><img src='images/edit.png' border='0' /></a></td>
