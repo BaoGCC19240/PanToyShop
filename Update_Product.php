@@ -54,14 +54,14 @@
 				{
 					if($pic['size']<= 614400)
 					{
-						$sq="SELECT * FROM product WHERE Pro_ID != '$id' and Pro_Name='$proname'";
+						$sq="SELECT * FROM product WHERE pro_id != '$id' and pro_name='$proname'";
 						$result=pg_query($conn,$sq);
 						if(pg_num_rows($result)==0)
 						{
 						copy($pic['tmp_name'], 'images/'.$pic['name']);
 						$filePic = $pic['name'];
 
-						$sqlstring="UPDATE product SET Pro_Name='$proname', pro_price=$price,
+						$sqlstring="UPDATE product SET pro_name='$proname', pro_price=$price,
 						pro_desc='$detail', pro_qty=$qty, pro_image='$filePic', cat_id='$category', shop_id ='$shop' WHERE pro_id='$id'";
 						pg_query($conn,$sqlstring);
 						echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
@@ -100,7 +100,7 @@
 			}
 		}
 	}
-        ?>-
+        ?>
         <?php
 	include_once("connection.php");
 	Function bind_Category_List($conn,$selectedValue){
@@ -156,7 +156,7 @@
 <div class="container">
 	<h2>Updating Product</h2>
 
-	 	<form id="frmProduct" name="frmProduct" method="post" enctype="multipart/form-data" action="" class="form-horizontal" role="form">
+	 	<form id="frmProduct" name="frmProduct" method="POST" enctype="multipart/form-data" action="" class="form-horizontal" role="form">
 				<div class="form-group">
 					<label for="txtTen" class="col-sm-2 control-label">Product ID(*):  </label>
 							<div class="col-sm-10">
