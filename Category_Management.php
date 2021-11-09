@@ -8,11 +8,19 @@
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
             <thead>
                 <tr>
-                    <th><strong>No.</strong></th>
-                    <th><strong>Category Name</strong></th>
-                     <th><strong>Description</strong></th>
-                    <th><strong>Edit</strong></th>
-                    <th><strong>Delete</strong></th>
+                    <th align="center"><strong>No.</strong></th>
+                    <th align="center">
+                        <strong>Category Name</strong>
+                    </th>
+                    <th align="center">
+                        <strong>Description</strong>
+                    </th>
+                    <th align="center">
+                        <strong>Edit</strong>
+                    </th>
+                    <th align="center">
+                        <strong>Delete</strong>
+                    </th>
                 </tr>
              </thead>
 
@@ -45,8 +53,10 @@
             {
                 ?>
 			<tr>
-              <td align="center"><?php echo $No;?></td>
-                <td align="center">
+                <td class="cotCheckBox">
+                    <?php echo $No;?>
+                </td>
+                <td class="cotCheckBox">
                     <?php echo $row['cat_name']; ?>
                 </td>
               
