@@ -56,20 +56,19 @@
                 From product a, category b , shop c
                 Where a.Cat_ID =b.Cat_ID and a.shop_id = c.shop_id");
                 while($row=pg_fetch_array($result)){
-                    var_dump($row);
                 ?>
 			<tr>
               <td ><?php echo $No; ?></td>
-              <td ><?php echo $row['Pro_ID']; ?></td>
-              <td><?php echo $row['Pro_Name']; ?></td>
-              <td><?php echo $row['Pro_Price']; ?></td>
-              <td ><?php echo $row['Pro_qty']; ?></td>
-              <td><?php echo $row['Cat_Name']; ?></td>
+              <td ><?php echo $row['pro_id']; ?></td>
+              <td><?php echo $row['pro_name']; ?></td>
+              <td><?php echo $row['pro_price']; ?></td>
+              <td ><?php echo $row['pro_qty']; ?></td>
+              <td><?php echo $row['cat_name']; ?></td>
                 <td>
-                    <?php echo $row['Shop_Name']; ?>
+                    <?php echo $row['shop_name']; ?>
                 </td>
              <td align='center' class='cotNutChucNang'>
-                 <img src='image/<?php echo $row['Pro_image']; ?>' border='0' width="50" height="50"  /></td>
+                 <img src='image/<?php echo $row['pro_image']; ?>' border='0' width="50" height="50"  /></td>
              <td align='center'><a href="?page=update_product&&id=<?php echo $row["Product_ID"]; ?>"><img src='images/edit.png' border='0'/></a></td>
              <td align='center'><a href="?page=product_management&&function=del&&id=<?php echo $row["Product_ID"]; ?>" onclick="return deleteConfirm()">
               <img src='images/delete.png' border='0' /></td>
