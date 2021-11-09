@@ -38,7 +38,7 @@
                                 </button>
                                 <div class="dropdown-content">
                                     <a href="?page=category_management">Category</a>
-                                    <a href="#">Product</a>
+                                    <a href="?page=product_management">Product</a>
                                     <a href="#">Shop</a>
                                 </div>
 
