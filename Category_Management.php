@@ -5,7 +5,7 @@
         <p>
         <img src="images/add.png" alt="Add new" width="16" height="16" border="0" /> <a href="?page=add_category"> Add</a>
         </p>
-        <table id="tablecategory" text-color:black; class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
             <thead>
                 <tr>
                     <th><strong>No.</strong></th>
