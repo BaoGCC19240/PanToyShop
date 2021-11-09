@@ -69,8 +69,8 @@
                 </td>
              <td align='center' class='cotNutChucNang'>
                  <img src='images/<?php echo $row['pro_image']; ?>' border='0' width="50" height="50"  /></td>
-             <td align='center'><a href="?page=update_product&&id=<?php echo $row["Pro_ID"]; ?>"><img src='images/edit.png' border='0'/></a></td>
-             <td align='center'><a href="?page=product_management&&function=del&&id=<?php echo $row["Pro_ID"]; ?>" onclick="return deleteConfirm()">
+             <td align='center'><a href="?page=update_product&&id=<?php echo $row["pro_id"]; ?>"><img src='images/edit.png' border='0'/></a></td>
+             <td align='center'><a href="?page=product_management&&function=del&&id=<?php echo $row["pro_id"]; ?>" onclick="return deleteConfirm()">
               <img src='images/delete.png' border='0' /></td>
             </tr>
             <?php
