@@ -46,9 +46,13 @@
                 ?>
 			<tr>
               <td class="cotCheckBox"><?php echo $No;?></td>
-              <td><?php echo $row['cat_name']; ?></td>
+                <td class="cotCheckBox">
+                    <?php echo $row['cat_name']; ?>
+                </td>
               
-              <td><?php echo $row['cat_desc']; ?></td>
+                <td class="cotCheckBox">
+                    <?php echo $row['cat_desc']; ?>
+                </td>
 
               <td style='text-align:center'><a href="?page=update_category&&id=<?php echo $row['cat_id'];?>"><img src='images/edit.png' border='0' /></a></td>
               <td style='text-align:center'>
