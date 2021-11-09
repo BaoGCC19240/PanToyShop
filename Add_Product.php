@@ -6,10 +6,10 @@
 	include_once("connection.php");
 		function bind_Category_List($conn){
 			$sqlstring ="select Cat_ID, Cat_Name from category";
-			$result =pg_query($conn,$sqlstring);
+			$result =mysqli_query($conn,$sqlstring);
 			echo "<select name='CategoryList' class='from-control'>
 			<option value='0'>Choose category</option>";
-			while($row=pg_fetch_array($result,null,PGSQL_ASSOC)){
+			while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
 				echo "<option value='".$row['Cat_ID']."'>".$row['Cat_Name']."</option>";
 			}
 			echo "</select>";
@@ -17,6 +17,7 @@
 		if(isset($_POST['btnAdd'])){
 			$id =$_POST['txtID'];
 			$proname =$_POST['txtName'];
+			$short =$_POST['txtShort'];
 			$detail =$_POST['txtDetail'];
 			$price =$_POST['txtPrice'];
 			$qty =$_POST['txtQty'];
