@@ -39,7 +39,7 @@
                                 <div class="dropdown-content">
                                     <a href="?page=category_management">Category</a>
                                     <a href="?page=product_management">Product</a>
-                                    <a href="#">Shop</a>
+                                    <a href="?page=shop_management">Shop</a>
                                 </div>
 
                             </div>
@@ -141,6 +141,9 @@
         }
         if($page=="cart"){
             include_once('cart.php');
+        }
+         if($page=="shop_management"){
+             include_once('shop_management.php');
         }
     }
     else
