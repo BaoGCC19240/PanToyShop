@@ -35,7 +35,7 @@
 			{
 				pg_query($conn,"INSERT INTO shop (shop_id, shop_name,shop_address,shop_tel)
 				VALUES ('$id','$name','$des','$tel')");
-				echo '<meta http-equiv="refresh" content="0,URL=?page=category_management"/>';
+				echo '<meta http-equiv="refresh" content="0,URL=?page=shop_management"/>';
 			}
 			else
 			{
