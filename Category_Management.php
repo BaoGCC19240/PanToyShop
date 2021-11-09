@@ -41,7 +41,7 @@
             include_once("connection.php");
             $No=1;
             $result =pg_query($conn,"Select * from category");
-            while($row=pg_fetch_array($result,null,PGSQL_ASSOC))
+            while($row=pg_fetch_array($result))
             {
                 var_dump($row['Cat_Name'])
                 ?>
