@@ -37,7 +37,7 @@
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="dropdown-content">
-                                    <a href="#">Category</a>
+                                    <a href="?page=category_management">Category</a>
                                     <a href="#">Product</a>
                                     <a href="#">Shop</a>
                                 </div>
