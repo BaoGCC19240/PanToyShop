@@ -77,7 +77,7 @@
             $result =pg_query($conn,"Select or_date, or_id, ord.username, cust_address, cust_tel, pro_name ,or_qty,
 or_amount, or_status from orderdetail ord , product pr ,customer cus
 where ord.username = cus.username and pr.pro_id = ord.pro_id
-order by or_date");
+order by or_id DESC");
             while($row=pg_fetch_array($result))
             {
                 ?>
