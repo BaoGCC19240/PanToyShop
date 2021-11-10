@@ -52,8 +52,9 @@
                         if(isset($_POST['btn_Submit'])){
 
                             if(isset($_SESSION['us'])){
+                                $today = date("d/m/Y");
                                 $us =$_SESSION['us'];
-                                $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status, username) values ('$key','$val','$sum','unconfimred','$us')";
+                                $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status,or_date, username) values ('$key','$val','$sum','unconfimred','$today','$us')";
                                 pg_query($conn,$sq);
                                 echo "<h3>Order Success</h3>";
                             }
