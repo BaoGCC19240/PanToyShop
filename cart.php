@@ -4,7 +4,7 @@
     $_SESSION['Sum']=0;
 ?>
 <?php
-        if(isset($_POST['btn_Submit'])){
+if(isset($_GET['btn_Submit'])){
             if(isset($_SESSION['us'])){
 
             }
