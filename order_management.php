@@ -59,18 +59,10 @@
                 <?php
             include_once("connection.php");
             if(isset($_GET["function"])=="del"){
-                if(isset($_GET['id'])){
-                    $id=$_GET["id"];
-                    pg_query($conn,"Delete from orderdetail where or_id ='$id'");
-
-                }
+                var_dump($_GET["function"]);
             }
             if(isset($_GET["function"])=="confirm"){
-                if(isset($_GET['id'])){
-                    $id=$_GET["id"];
-                    pg_query($conn,"update orderdetail set or_status ='confirmed' where or_id =$id");
-
-                }
+                var_dump($_GET["function"]);
             }
                 ?>
                 <?php
