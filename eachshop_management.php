@@ -71,12 +71,12 @@
 
 			</tbody>
         </table>  
-        <br />
             <?php
                 $No++;
             }
             }
-            ?>
+            ?>      
+        
         <!--Nút Thêm mới , xóa tất cả-->
         <div class="row" style="background-color:#FFF"><!--Nút chức nang-->
             <div class="col-md-12">
