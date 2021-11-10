@@ -4,7 +4,7 @@
     $_SESSION['Sum']=0;
 ?>
 <?php
-if(isset($_GET['btn_Submit'])){
+if(isset($_POST['btn_Submit'])){
             
                 echo "<p>Please login before buy !!!</p>";
             
@@ -71,7 +71,7 @@ if(isset($_GET['btn_Submit'])){
             </table>
             
         </div>
-        <form method="get">
+        <form method="post">
             <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
         </form>
 
