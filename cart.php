@@ -23,7 +23,7 @@
                 <td>
                     <div class="cart-info">
                         
-                        <img src="images/buy-1.jpg" />
+                        <img src="images/<?php echo $row['pro_image']; ?>" />
                         <div>
                             <p><?php echo $row['pro_name']; ?></p>
                             <small>
