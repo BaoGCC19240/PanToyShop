@@ -67,6 +67,16 @@
         </div>
 
                 <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
-        
+        <?php
+        if(isset($_POST['btn_Submit'])){
+            if(isset($_SESSION['us'])){
+
+            }
+            else
+            {
+                echo "<p>Please login before buy !!!</p>";
+            }
+        }
+        ?>
         
     </div>
