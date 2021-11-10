@@ -41,6 +41,7 @@
                                     <a href="?page=product_management">Product</a>
                                     <a href="?page=shop_management">Shop</a>
                                     <a href="?page=order_management">Order</a>
+                                    <a href="?page=eachshop_management">Order</a>
                                 </div>
 
                             </div>
@@ -146,6 +147,9 @@
          if($page=="shop_management"){
              include_once('shop_management.php');
         }
+         if($page=="eachshop_management"){
+             include_once('eachshop_management.php');
+         }
          if($page=="add_shop"){
              include_once('add_shop.php');
          }
