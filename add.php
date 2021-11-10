@@ -11,7 +11,7 @@ $res = pg_query($conn,$sql);
 var_dump($res);
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
 var_dump($_SESSION['page']);
-/*if($action=='add')
+if($action=='add')
 {
    if(isset($_SESSION['cart'][$id]))
         {
@@ -25,7 +25,7 @@ var_dump($_SESSION['page']);
         echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
         exit();
 }
-elseif($action=='update')
+/*elseif($action=='update')
 {
     if($_SESSION['cart'][$id]>0)
     {
@@ -44,7 +44,7 @@ else
     unset($_SESSION['cart'][$id]);
     echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
     exit();
-}
+}*/
 
         if($_SESSION['page']=="index"){
             echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
@@ -52,7 +52,7 @@ else
         if($_SESSION['page']=="cart"){
             echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
         }
-        */
+        
 
 
 
