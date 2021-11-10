@@ -56,6 +56,7 @@
                                 $us =$_SESSION['us'];
                                 $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status,or_date, username) values ('$key','$val','$sum','unconfimred','$today','$us')";
                                 pg_query($conn,$sq);
+                                session_destroy();
                                 echo "<h3>Order Success</h3>";
                             }
                             else
