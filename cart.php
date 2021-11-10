@@ -71,8 +71,10 @@ if(isset($_GET['btn_Submit'])){
             </table>
             
         </div>
+        <form method="get">
+            <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
+        </form>
 
-                <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
         
         
     </div>
