@@ -55,6 +55,10 @@
                                 $us =$_SESSION['us'];
                                 $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status, username) values ('$key','$val','$sum','unconfimred','$us')";
                                 echo "<h3>Order Success</h3>";
+                                var_dump($key);
+                                var_dump($val);
+                                var_dump($sum);
+                                var_dump($us);
                             }
                             else
                             {
