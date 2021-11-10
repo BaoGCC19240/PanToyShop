@@ -4,8 +4,6 @@
         <h1>Manage each shop</h1>
 
 
-
-        <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
             <?php
             include_once('connection.php');
             $sq ="select shop_name, shop_id from shop";
@@ -13,6 +11,8 @@
             while($rShop = pg_fetch_array($re)){
                 $idshop = $rShop['shop_id'];
             ?>
+        <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
+
             <thead>
                 <tr>
                   <th>
@@ -68,15 +68,15 @@
                 </td>
 
             </tr>
+
+			</tbody>
+        </table>  
+        <br />
             <?php
                 $No++;
             }
-        }
+            }
             ?>
-			</tbody>
-        </table>  
-        
-        
         <!--Nút Thêm mới , xóa tất cả-->
         <div class="row" style="background-color:#FFF"><!--Nút chức nang-->
             <div class="col-md-12">
