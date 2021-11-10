@@ -5,9 +5,14 @@
 ?>
 <?php
 if(isset($_POST['btn_Submit'])){
-            
-                echo "<p>Please login before buy !!!</p>";
-            
+
+         if(isset($_SESSION['us'])){
+
+         }
+         else
+         {
+             echo "<h1>Please login before buy !!!</h1>";
+         }
         }
 ?>
     <!-- -----------------cart item details------------------- -->
