@@ -404,10 +404,10 @@ input:focus{
 .cart-page{
     margin: 80px auto;
 }
-table{
+table {
     width: 100%;
     border-collapse: collapse;
-
+    margin-top: 50px;
 }
 .cart-info{
     display: flex;
