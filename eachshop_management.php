@@ -48,10 +48,6 @@
             $result =pg_query($conn,"Select shop_name, pro_name, pro_qty, or_qty  from shop sh, product pro, orderdetail ord where ord.pro_id= pro.pro_id and sh.shop_id=pro.shop_id and sh.shop_id =$idshop");
             while($row=pg_fetch_array($result))
             {
-                if($row['or_qty']==""){
-                    $row['or_qty']=0;
-                }
-
                 ?>
 			<tr>
                 <td class="cotCheckBox">
