@@ -5,7 +5,7 @@
         <?php
 	include_once("connection.php");
 		function bind_Category_List($conn){
-			$sqlstring ="select Cat_ID, Cat_Name from category";
+			$sqlstring ="select cat_id, cat_name from category";
 			$result =pg_query($conn,$sqlstring);
 			echo "<select name='CategoryList' class='from-control'>
 			<option value='0'>Choose category</option>";
@@ -15,7 +15,7 @@
 			echo "</select>";
 		}
 		function bind_Shop_List($conn){
-			$sqlstring ="select Shop_ID, Shop_Name from shop";
+			$sqlstring ="select shop_id, shop_name from shop";
 			$result =pg_query($conn,$sqlstring);
 			echo "<select name='ShopList' class='from-control'>
 			<option value='0'>Choose Shop</option>";
@@ -57,13 +57,13 @@
 					if($pic['size']<=614400)
 					{
 
-						$sq="select * from product where Pro_ID='$id' or Pro_Name='$proname'";
+						$sq="select * from product where pro_id='$id' or pro_name='$proname'";
 						$result=pg_query($conn,$sq);
 						if(pg_num_rows($result)==0)
 						{
 							copy($pic['tmp_name'], 'images/' .$pic['name']);
 							$filePic=$pic['name'];
-							$sqlstring="insert into product( Pro_ID, Pro_Name, Pro_Price,Pro_Desc, Pro_qty, Pro_image, Cat_ID, Shop_id)
+							$sqlstring="insert into product( pro_id, pro_name, pro_price,pro_desc, pro_qty, pro_image, cat_id, shop_id)
 							values('$id','$proname','$price','$detail','$qty','$filePic','$category','$shop')";
 							pg_query($conn,$sqlstring);
 							echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
