@@ -4,13 +4,8 @@ session_start();
 $id=!empty($_GET["id"])? $_GET['id']:0;
 $action=!empty($_GET["action"])? $_GET['action']:'add';
 $sql = "SELECT * From product where pro_id = '$id'";
-var_dump($id);
-var_dump($action);
-var_dump($sql);
 $res = pg_query($conn,$sql);
-var_dump($res);
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
-var_dump($_SESSION['page']);
 if($action=='add')
 {
    if(isset($_SESSION['cart'][$id]))
