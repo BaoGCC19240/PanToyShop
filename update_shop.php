@@ -8,7 +8,7 @@
 	if(isset($_GET["id"]))
 	{
 		$id=$_GET["id"];
-		$result = pg_query($conn,"Select * from shop Where shop_ID='$id'");
+		$result = pg_query($conn,"Select * from shop Where shop_id='$id'");
 		$row=pg_fetch_array($result);
 		$shop_id=$row['shop_id'];
 		$shop_name=$row['shop_name'];
@@ -37,11 +37,11 @@
 	   }
 	   else
 	   {
-		   $sq="select * from shop where Shop_ID !='$id' and Shop_Name='$name'";
+		   $sq="select * from shop where shop_id !='$id' and Shop_Name='$name'";
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
-			   pg_query($conn,"UPDATE shop Set Shop_Name ='$name',Shop_address='$des' ,Shop_tel ='$tel' where Shop_ID='$id'");
+			   pg_query($conn,"UPDATE shop Set Shop_Name ='$name',Shop_address='$address' ,Shop_tel ='$tel' where Shop_ID='$id'");
 			   echo '<meta http-equiv="refresh" content="0,URL=?page=shop_management"/>';
 		   }
 		   else
