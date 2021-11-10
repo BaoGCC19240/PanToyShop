@@ -13,9 +13,16 @@
             while($rShop = pg_fetch_array($re)){
                 $idshop = $rShop['shop_id'];
             ?>
-            <h1>
-                Manage <?php echo $rShop['shop_name']; ?> shop
-            </h1>
+            <thead>
+                <tr>
+                  <th>
+                      <strong>
+                          Manage <?php echo $rShop['shop_name']; ?> shop
+                      </strong>
+                  </th>                    
+                </tr>
+            </thead>
+            
             <thead>                
                 <tr>
                     <th align="center"><strong>No.</strong></th>
