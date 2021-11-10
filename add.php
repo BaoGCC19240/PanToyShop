@@ -7,7 +7,8 @@ $sql = "SELECT * From product where pro_id = '$id'";
 var_dump($id);
 var_dump($action);
 var_dump($sql);
-/*$res = pg_query($conn, $sql) or die ("Product is not found !!!");
+$res = pg_query($conn, $sql) or die ("Product is not found !!!");
+var_dump($res);
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
 if($action=='add')
 {
