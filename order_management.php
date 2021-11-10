@@ -56,16 +56,23 @@
                 }
             }
             </script>
-            <?php
+                <?php
             include_once("connection.php");
             if(isset($_GET["function"])=="del"){
                 if(isset($_GET['id'])){
                     $id=$_GET["id"];
                     pg_query($conn,"Delete from orderdetail where or_id ='$id'");
-                    
+
                 }
-            } 
-            ?>
+            }
+            if(isset($_GET["function"])=="confirm"){
+                if(isset($_GET['id'])){
+                    $id=$_GET["id"];
+                    pg_query($conn,"update orderdetail set or_status ='Confirmed' where or_id ='$id'");
+
+                }
+            }
+                ?>
                 <?php
             include_once("connection.php");
             $No=1;
@@ -109,7 +116,9 @@ order by username");
                     <?php echo $row['or_status']; ?>
                 </td>
 
-              <td style='text-align:center'><a href="?page=update_order&&id=<?php echo $row['or_id'];?>"><img src='images/tick.png' border='0' filter: blur(5px); /></a></td>
+              <td style='text-align:center'><a href="?page=order_management&&function=confirm&&id=<?php echo $row['or_id']; ?>">
+    <img src='images/tick.png' border='0' filter: blur(5px); />
+</a></td>
               <td style='text-align:center'>
               <a href="?page=order_management&&function=del&&id=<?php echo $row['or_id']; ?>" onclick="return deleteConfirm()">
               <img src='images/delete.png' border='0' /></td>
