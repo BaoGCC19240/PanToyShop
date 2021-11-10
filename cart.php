@@ -3,8 +3,20 @@
     session_start();
     $_SESSION['Sum']=0;
 ?>
+<?php
+        if(isset($_POST['btn_Submit'])){
+            if(isset($_SESSION['us'])){
+
+            }
+            else
+            {
+                echo "<p>Please login before buy !!!</p>";
+            }
+        }
+?>
     <!-- -----------------cart item details------------------- -->
     <div class="small-container cart-page">
+      
         <table>
             <tr>
                 <th>Product</th>
@@ -58,25 +70,13 @@
                 <tr>
                     <td>Total</td>
                     <td><?php echo $_SESSION['Sum']; ?>$</td>
-                </tr>
-                
-                    
+                </tr>  
                 
             </table>
             
         </div>
 
                 <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
-        <?php
-        if(isset($_POST['btn_Submit'])){
-            if(isset($_SESSION['us'])){
-
-            }
-            else
-            {
-                echo "<p>Please login before buy !!!</p>";
-            }
-        }
-        ?>
+        
         
     </div>
