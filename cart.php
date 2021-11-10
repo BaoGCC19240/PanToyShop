@@ -57,6 +57,7 @@
                                 $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status,or_date, username) values ('$key','$val','$sum','unconfimred','$today','$us')";
                                 pg_query($conn,$sq);
                                 session_destroy();
+
                                 echo "<h3>Order Success</h3>";
                             }
                             else
@@ -83,7 +84,7 @@
         </div>
         <form method="post">
             <div>
-                <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
+                <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" onclick="window.location='?page=cart'" />
 
             </div>
         </form>
