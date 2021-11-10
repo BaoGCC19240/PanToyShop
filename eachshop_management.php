@@ -58,7 +58,7 @@
                     <?php echo $row['pro_name']; ?>
                 </td>
                 <td class="cotCheckBox">
-                    <?php echo $row['pro_qty']; ?>
+                    <?php echo $row['pro_qty']!=""? :'null'; ?>
                 </td>
                 <td class="cotCheckBox">
                     <?php echo $row['or_qty']; ?>
