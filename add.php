@@ -1,10 +1,13 @@
 <?php
 include_once('connection.php');
 session_start();
-$id=!empty($_GET["id"])?(int) $_GET['id']:0;
+$id=!empty($_GET["id"])? $_GET['id']:0;
 $action=!empty($_GET["action"])? $_GET['action']:'add';
 $sql = "SELECT * From product where pro_id = '$id'";
-$res = pg_query($conn, $sql) or die ("Product is not found !!!");
+var_dump($id);
+var_dump($action);
+var_dump($sql);
+/*$res = pg_query($conn, $sql) or die ("Product is not found !!!");
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
 if($action=='add')
 {
@@ -46,7 +49,7 @@ else
         }
         if($_SESSION['page']=="cart"){
             echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-        }
+        }*/
 
 
 
