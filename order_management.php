@@ -68,7 +68,7 @@
             if(isset($_GET["function"])=="confirm"){
                 if(isset($_GET['id'])){
                     $id=$_GET["id"];
-                    pg_query($conn,"update orderdetail set or_status ='Confirmed' where or_id ='$id'");
+                    pg_query($conn,"update orderdetail set or_status ='confirmed' where or_id =$id");
 
                 }
             }
