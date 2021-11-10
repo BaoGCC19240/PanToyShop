@@ -2,14 +2,12 @@
    <div id="top">
         <form name="frm" method="post" action="">
         <h1>Manage each shop</h1>
+        <?php 
+        $sq ="select shop_id from orderdetail";
+        $re = pg_query($conn, $sq);
+        while($rShop = pg_fetch_array($re)){
+        ?>
 
-            <?php
-            include_once("connection.php");
-            $No=1;
-            $result =pg_query($conn,"Select shop_name, pro_name, pro_qty, or_qty  from orderdetail ord, product pro, shop sh where ord.pro_id= pro.pro_id and sh.shop_id=pro.shop_id");
-            while($row=pg_fetch_array($result))
-            {
-            ?>
 
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
             <thead>
@@ -34,7 +32,13 @@
              </thead>
 
 			<tbody>
-           
+                <?php
+            include_once("connection.php");
+            $No=1;
+            $result =pg_query($conn,"Select shop_name, pro_name, pro_qty, or_qty  from shop sh, product pro, orderdetail ord where ord.pro_id= pro.pro_id and sh.shop_id=pro.shop_id and sh.shop_id =$rShop");
+            while($row=pg_fetch_array($result))
+            {
+                ?>
 			<tr>
                 <td class="cotCheckBox">
                     <?php echo $No;?>
@@ -59,7 +63,8 @@
             </tr>
             <?php
                 $No++;
-                }
+            }
+        }
             ?>
 			</tbody>
         </table>  

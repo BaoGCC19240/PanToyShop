@@ -68,7 +68,7 @@
 
               <td style='text-align:center'><a href="?page=update_category&&id=<?php echo $row['cat_id'];?>"><img src='images/edit.png' border='0' /></a></td>
               <td style='text-align:center'>
-              <a href="?page=category_management&&function=del&&id=<?php echo $row['cat_id']; ?>" onclick="return deleteConfirm()">
+              <a href="?page=category_management&&function=del&&id=<?php echo $row['cat_id']; ?>" onclick="return deleteConfirm()"/>
               <img src='images/delete.png' border='0' /></td>
             </tr>
             <?php
