@@ -8,6 +8,7 @@
         <table>
             <tr>
                 <th>Product</th>
+                <th>Price</th>
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
@@ -26,10 +27,7 @@
                         <img src="images/<?php echo $row['pro_image']; ?>" />
                         <div>
                             <p><?php echo $row['pro_name']; ?></p>
-                            <small>
-                                <?php echo $row['pro_price']; ?>$
-                            </small>
-                            <br />
+                                                       <br />
                             <a href="add.php?id=<?php echo $key; ?>&action=de&page=cart">Remove</a>
                             
 
@@ -37,6 +35,7 @@
                         
                     </div>
                 </td>
+                <td><p><?php echo $row['pro_price'];?></p></td>
 
                 <td>
                     <a href="add.php?id=<?php echo $row['pro_id']; ?>&action=update&page=cart">
