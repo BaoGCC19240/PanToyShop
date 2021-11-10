@@ -8,17 +8,17 @@
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
             <?php
             include_once('connection.php');
-            $sq ="select shop_id from shop";
+            $sq ="select shop_name, shop_id from shop";
             $re = pg_query($conn, $sq);
             while($rShop = pg_fetch_array($re)){
                 $idshop = $rShop['shop_id'];
             ?>
-            <thead>
+            <h1>
+                Manage <?php echo $rShop['shop_name']; ?> shop
+            </h1>
+            <thead>                
                 <tr>
                     <th align="center"><strong>No.</strong></th>
-                    <th align="center">
-                        <strong>Shop Name</strong>
-                    </th>
                     <th align="center">
                         <strong>Product Name</strong>
                     </th>
@@ -45,9 +45,6 @@
 			<tr>
                 <td class="cotCheckBox">
                     <?php echo $No;?>
-                </td>
-                <td class="cotCheckBox">
-                    <?php echo $row['shop_name']; ?>
                 </td>
               
                 <td class="cotCheckBox">
