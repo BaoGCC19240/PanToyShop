@@ -72,7 +72,7 @@ if(isset($_POST['btn_Submit'])){
             
         </div>
         <form method="post">
-            <div sm-col-4>
+            <div class="col-2">
                 <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
 
             </div>
