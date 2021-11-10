@@ -3,18 +3,6 @@
     session_start();
     $_SESSION['Sum']=0;
 ?>
-<?php
-if(isset($_POST['btn_Submit'])){
-
-         if(isset($_SESSION['us'])){
-
-         }
-         else
-         {
-             echo "<h1>Please login before buy !!!</h1>";
-         }
-        }
-?>
     <!-- -----------------cart item details------------------- -->
     <div class="small-container cart-page">
       
@@ -31,7 +19,8 @@ if(isset($_POST['btn_Submit'])){
                     $result = pg_query($conn, "Select * from product where pro_id ='$key' ");
                     while($row = pg_fetch_array($result)){
                         $total = $val * $row['pro_price'];
-                        $_SESSION['Sum']+=$total; 
+                        $_SESSION['Sum']+=$total;
+                        $sum =  $_SESSION['Sum'];
             ?>
             <tr>
                 <td>
@@ -59,7 +48,20 @@ if(isset($_POST['btn_Submit'])){
                 <td><?php echo $total ?>$</td>
             </tr>
             <?php
-                          
+            //insert into orderdetail table
+                        if(isset($_POST['btn_Submit'])){
+
+                            if(isset($_SESSION['us'])){
+                                $us =$_SESSION['us'];
+                                $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status, username) values ('$key','$val','$sum','unconfimred','$us')";
+                                echo "<h3>Order Success</h3>";
+                            }
+                            else
+                            {
+                                echo "<h3>Please login before buy !!!</h3>";
+                            }
+                        }
+
                     }
                 endforeach;
             }
