@@ -40,6 +40,7 @@
                                     <a href="?page=category_management">Category</a>
                                     <a href="?page=product_management">Product</a>
                                     <a href="?page=shop_management">Shop</a>
+                                    <a href="?page=order_management">Order</a>
                                 </div>
 
                             </div>
@@ -150,6 +151,9 @@
          }
          if($page=="update_shop"){
              include_once('update_shop.php');
+         }
+         if($page=="order_management"){
+             include_once('order_management.php');
          }
     }
     else
