@@ -41,7 +41,7 @@
                                     <a href="?page=product_management">Product</a>
                                     <a href="?page=shop_management">Shop</a>
                                     <a href="?page=order_management">Order</a>
-                                    <a href="?page=eachshop_management">Order</a>
+                                    <a href="?page=eachshop_management">Each Shop</a>
                                 </div>
 
                             </div>
