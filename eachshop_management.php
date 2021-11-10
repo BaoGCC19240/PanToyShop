@@ -13,7 +13,7 @@
             ?>
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
 
-            <thead>
+            <thead id="nameshop">
                 <tr>
                   <th>
                       <strong>
