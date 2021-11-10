@@ -68,11 +68,14 @@
                 </td>
 
             </tr>
-               <?php }?>
+                <?php  $No++;
+
+            }
+            ?> 
 			</tbody>
         </table>  
             <?php
-                $No++;
+                
             }
             ?>      
         
