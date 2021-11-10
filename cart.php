@@ -14,9 +14,9 @@
             <?php
             if(isset($_SESSION['cart'])){
                 foreach($_SESSION['cart'] as $key => $val):
-                    $result = mysqli_query($conn, "Select * from product where Pro_ID ='$key' ");
-                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                        $total = $val * $row['Pro_Price'];
+                    $result = pg_query($conn, "Select * from product where pro_id ='$key' ");
+                    while($row = pg_fetch_array($result)){
+                        $total = $val * $row['pro_price'];
                         $_SESSION['Sum']+=$total; 
             ?>
             <tr>
@@ -25,9 +25,9 @@
                         
                         <img src="images/buy-1.jpg" />
                         <div>
-                            <p><?php echo $row['Pro_Name']; ?></p>
+                            <p><?php echo $row['pro_name']; ?></p>
                             <small>
-                                <?php echo $row['Pro_Price']; ?>$
+                                <?php echo $row['pro_price']; ?>$
                             </small>
                             <br />
                             <a href="add.php?id=<?php echo $key; ?>&action=de&page=cart">Remove</a>
@@ -39,11 +39,11 @@
                 </td>
 
                 <td>
-                    <a href="add.php?id=<?php echo $row['Pro_ID']; ?>&action=update&page=cart">
+                    <a href="add.php?id=<?php echo $row['pro_id']; ?>&action=update&page=cart">
                         <input type="button" value="-" />
                     </a>
                     <input readonly type="text" value="<?php echo $val ?>" />
-                    <a href="add.php?id=<?php echo $row['Pro_ID']; ?>&action=add&page=cart"><input type="button" value="+" /></a>
+                    <a href="add.php?id=<?php echo $row['pro_id']; ?>&action=add&page=cart"><input type="button" value="+" /></a>
                 </td>
                 <td><?php echo $total ?>$</td>
             </tr>
@@ -69,9 +69,6 @@
         </div>
 
                 <input type="submit" class="btn btn-primary" id="btn_checkout" name="btn_Submit" value="Submit" />
-        <?php
-        if(isset($_POST['btn_Submit'])){
-            
-        }
+        
         
     </div>
