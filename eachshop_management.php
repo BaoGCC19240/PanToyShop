@@ -2,15 +2,16 @@
    <div id="top">
         <form name="frm" method="post" action="">
         <h1>Manage each shop</h1>
-            <?php
-            include_once('connection.php');
-        $sq ="select shop_id from shop";
-        $re = pg_query($conn, $sq);
-        while($rShop = pg_fetch_array($re)){
-            ?>
+
 
 
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
+            <?php
+            include_once('connection.php');
+            $sq ="select shop_id from shop";
+            $re = pg_query($conn, $sq);
+            while($rShop = pg_fetch_array($re)){
+            ?>
             <thead>
                 <tr>
                     <th align="center"><strong>No.</strong></th>
