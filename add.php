@@ -7,7 +7,7 @@ $sql = "SELECT * From product where pro_id = '$id'";
 var_dump($id);
 var_dump($action);
 var_dump($sql);
-$res = pg_query($conn, $sql);
+$res = pg_query($conn,$sql);
 var_dump($res);
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
 if($action=='add')
@@ -50,7 +50,7 @@ else
         }
         if($_SESSION['page']=="cart"){
             echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-        }*/
+        }
 
 
 

@@ -44,13 +44,13 @@ if(isset($_POST['btnUpdate'])){
 
 			$sq="UPDATE customer
 			SET cust_name='$fullname',cust_address='$address',cust_tel='$tel',password='$pass' WHERE username='".$_SESSION['us']."'";
-			pg_query($conn,$sq) or die(pg_error());
+			pg_query($conn,$sq);
 		}
 		//Customer does not changes password
 		else {
 			$sq="UPDATE customer
 			SET cust_name='$fullname',cust_address='$address',cust_tel='$tel' WHERE username='".$_SESSION['us']."'";
-			pg_query($conn,$sq) or die(pg_error());
+			pg_query($conn,$sq);
 		}
 		echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
 	}else {

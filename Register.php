@@ -41,8 +41,7 @@
         $sq="select * from customer where username='$us' or cust_email='$email'";
         $res=pg_query($conn,$sq);
         if(pg_num_rows($res)==0){
-            pg_query($conn,"Insert into customer (username, cust_name, password, cust_email, cust_tel, cust_address, gender, state) values('$us','$fullname','$pass','$email','$tel','$address','$sex',0)")
-            or die(pg_error());
+            pg_query($conn,"Insert into customer (username, cust_name, password, cust_email, cust_tel, cust_address, gender, state) values('$us','$fullname','$pass','$email','$tel','$address','$sex',0)");
             echo"You have registered successfully";
         }
         else{
