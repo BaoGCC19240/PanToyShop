@@ -1,4 +1,14 @@
    <link rel="stylesheet" href="css/bootstrap.css">
+ <script language="javascript">
+            function deleteConfirm(){
+                if(confirm("Are you sure to delete!")){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+       }
+</script>
    <div id="top">
         <form name="frm" method="post" action="">
         <h1>Category Management</h1>
@@ -23,18 +33,10 @@
                     </th>
                 </tr>
              </thead>
+           
 
 			<tbody>
-            <script language="javascript">
-            function deleteConfirm(){
-                if(confirm("Are you sure to delete!")){
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
-            </script>
+            
             <?php
             include_once("connection.php");
             if(isset($_GET["function"])=="del"){
