@@ -22,10 +22,10 @@ if($action=='add')
             $qty=1;
         }
         $_SESSION['cart'][$id]= $qty;
-        echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-        exit();
+        //echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
+        //exit();
 }
-/*elseif($action=='update')
+elseif($action=='update')
 {
     if($_SESSION['cart'][$id]>0)
     {
@@ -36,15 +36,13 @@ if($action=='add')
         unset($_SESSION['cart'][$id]);
     }
     $_SESSION['cart'][$id]= $qty;
-    echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-    exit();
+    /*echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
+    exit();*/
 }
 else
 {
     unset($_SESSION['cart'][$id]);
-    echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-    exit();
-}*/
+}
 
         if($_SESSION['page']=="index"){
             echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
