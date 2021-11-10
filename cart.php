@@ -5,13 +5,9 @@
 ?>
 <?php
 if(isset($_GET['btn_Submit'])){
-            if(isset($_SESSION['us'])){
-
-            }
-            else
-            {
+            
                 echo "<p>Please login before buy !!!</p>";
-            }
+            
         }
 ?>
     <!-- -----------------cart item details------------------- -->
