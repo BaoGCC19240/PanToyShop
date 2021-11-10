@@ -3,8 +3,8 @@ include_once('connection.php');
 session_start();
 $id=!empty($_GET["id"])?(int) $_GET['id']:0;
 $action=!empty($_GET["action"])? $_GET['action']:'add';
-$sql = "SELECT * From product where Pro_ID = '$id'";
-$res = mysqli_query($conn, $sql) or die ("Product is not found !!!");
+$sql = "SELECT * From product where pro_id = '$id'";
+$res = pg_query($conn, $sql) or die ("Product is not found !!!");
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
 if($action=='add')
 {
@@ -17,8 +17,8 @@ if($action=='add')
             $qty=1;
         }
         $_SESSION['cart'][$id]= $qty;
-        //echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-        //exit();
+        echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
+        exit();
 }
 elseif($action=='update')
 {
@@ -31,14 +31,14 @@ elseif($action=='update')
         unset($_SESSION['cart'][$id]);
     }
     $_SESSION['cart'][$id]= $qty;
-    //echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-    //exit();
+    echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
+    exit();
 }
 else
 {
     unset($_SESSION['cart'][$id]);
-    //echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
-    //exit();
+    echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
+    exit();
 }
 
         if($_SESSION['page']=="index"){
