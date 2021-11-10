@@ -10,7 +10,8 @@ var_dump($sql);
 $res = pg_query($conn,$sql);
 var_dump($res);
 $_SESSION['page']=!empty($_GET['page'])?$_GET['page']:'index';
-if($action=='add')
+var_dump($_SESSION['page']);
+/*if($action=='add')
 {
    if(isset($_SESSION['cart'][$id]))
         {
@@ -51,7 +52,7 @@ else
         if($_SESSION['page']=="cart"){
             echo '<meta http-equiv="refresh" content="0;URL=index.php?page=cart"/>';
         }
-
+        */
 
 
 
