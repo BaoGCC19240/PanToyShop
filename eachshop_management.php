@@ -46,7 +46,8 @@
             $result =pg_query($conn,"select * from product where shop_id =$idshop");
             while($row=pg_fetch_array($result))
             {
-                $sq=pg_query($conn,"select sum(or_qty) from orderdetail where pro_id=".$row['pro_id']."");
+                $proid= $row['pro_id'];
+                $sq=pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
 
 
 
