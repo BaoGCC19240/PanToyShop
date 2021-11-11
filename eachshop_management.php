@@ -48,8 +48,12 @@
             $result =pg_query($conn,"select * from product where shop_id =$idshop");
             while($row=pg_fetch_array($result))
             {
-                $pro_num = !empty($row['or_qty']) ? $row['or_qty']:0;
+                $proid= $row['pro_id'];
+                $sqor = pg_query($conn,"select or_qty from category where pro_id=$proid")
 
+                while($col= pg_fetch_array($sqor)){
+                      $sum  = "";
+                      $sum+=$col['or_qty'];
                 ?>
 			<tr>
                 <td class="cotCheckBox">
@@ -62,11 +66,13 @@
                 <td class="cotCheckBox">
                     <?php echo $row['pro_qty']; ?>
                 </td>
-
+                <td class="cotCheckBox">
+                    <?php echo $sum; ?>
+                </td>
 
             </tr>
                 <?php  $No++;
-
+                }
             }
             ?> 
 			</tbody>
