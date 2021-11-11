@@ -10,6 +10,7 @@
             $re = pg_query($conn, $sq);
             while($rShop = pg_fetch_array($re)){
                 $idshop = $rShop['shop_id'];
+                $sum=3;
             ?>
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
 
@@ -60,19 +61,11 @@
                 <td class="cotCheckBox">
                     <?php echo $row['pro_qty']; ?>
                 </td>
-                <?php
-                 $proid= $row['pro_id'];
-                $sqor = pg_query($conn,"select or_qty from orderdetail where pro_id='$proid'");
-                $sum  = "";
-                while($col=pg_fetch_array($sqor)){
-                      $sum+=$col['or_qty'];
-                      var_dump($sum);
-                
-                ?>
+
                 <td class="cotCheckBox">
                     <?php echo $sum; ?>
                 </td>
-                <?php } ?>
+
             </tr>
                 <?php $No++;
 
