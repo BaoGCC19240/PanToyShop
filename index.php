@@ -1,14 +1,5 @@
 <?php
 session_start();
-function bind_Category_List($conn){
-			$sqlstring ="select cat_id, cat_name from category";
-			$result =pg_query($conn,$sqlstring);
-			echo "<div class='dropdown-content'>";
-			while($row=pg_fetch_array($result)){
-				echo  "<a href='?page=product&&id='".$row['cat_id'] ."''>".$row['cat_name']."</a>";
-			}
-			echo "</div>";
-		}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,13 +27,23 @@ function bind_Category_List($conn){
                         <li><a href="index.php">Home</a></li>
                         <li>
                             <div class="dropdown">
-                        <button class="dropbtn">
-                        Product
-                        <i class="fa fa-caret-down"></i>
-                        </button>
-                                <?php bind_Category_List($conn);  ?>
-    
-                         </div>
+                                <button class="dropbtn">
+                                    Product
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <?php 
+                                    include_once('connection.php');
+                                    $sq = pg_query($conn, "select cat_id, cat_name from category");
+                                   while($row = pg_fetch_array($sq)){
+                                       
+                                   
+                                    ?>
+                                    <a href="?page=product&&id='<?php echo $row['cat_id']; ?>'"><?php echo $row['cat_name']; ?></a>
+                                    <?php }?>
+                                </div>
+
+                            </div>
                         </li>
                         <?php
                         if(!isset($_SESSION['admin']) or $_SESSION['admin']==0)
