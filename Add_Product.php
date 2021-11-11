@@ -33,7 +33,6 @@
 			$pic =$_FILES['txtImage'];
 			$category =$_POST['CategoryList'];
 			$shop =$_POST['ShopList'];
-
 			$err="";
 			if(trim($id)==""){
 				$err.="<li>Enter product ID,please</li>";
@@ -64,9 +63,9 @@
 						{
 							copy($pic['tmp_name'], 'images/' .$pic['name']);
 							$filePic=$pic['name'];
-							$sqlsring="insert into product( pro_id, pro_name, pro_price,pro_desc, pro_qty, pro_image, cat_id, shop_id)
+							$sqlstring="insert into product( pro_id, pro_name, pro_price,pro_desc, pro_qty, pro_image, cat_id, shop_id)
 							values('$id','$proname','$price','$detail','$qty','$filePic','$category','$shop')";
-							pg_query($conn,$sqlsring);
+							pg_query($conn,$sqlstring);
 							echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 						}
 						else
