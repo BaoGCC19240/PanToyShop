@@ -27,7 +27,7 @@ session_start();
                         <li><a href="index.php">Home</a></li>
                         <li>
                             <div class="dropdown">
-                                <button class="dropbtn" href="javascript:;">
+                                <button class="dropbtn">
                                     Product
                                     <i class="fa fa-caret-down"></i>
                                 </button>
