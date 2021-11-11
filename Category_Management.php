@@ -1,4 +1,4 @@
-   <link rel="stylesheet" href="css/bootstrap.css">
+
  <script language="javascript">
             function deleteConfirm(){
                 if(confirm("Are you sure to delete!")){
