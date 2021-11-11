@@ -11,9 +11,8 @@
 		$result = pg_query($conn,"Select * from category Where Cat_ID='$id'");
 		$row=pg_fetch_array($result);
 		$cat_id=htmlspecialchars(pg_escape_string($row['cat_id']));
-		var_dump($row['cat_name']);
-		$cat_name=htmlspecialchars(pg_escape_string($row['cat_name']));
-		$cat_des=htmlspecialchars(pg_escape_string($row['cat_desc']));
+		$cat_name=htmlspecialchars(pg_escape_string($row["cat_name"]));
+		$cat_des=htmlspecialchars(pg_escape_string($row["cat_desc"]));
 
    if(isset($_POST["btnUpdate"]))
    {
