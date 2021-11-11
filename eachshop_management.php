@@ -68,7 +68,7 @@
                     <?php echo $a; ?>
                 </td>
                 <td class="cotCheckBox">
-                    <?php echo $b; ?>
+                    <?php echo $b; ?>$
                 </td>
 
             </tr>
