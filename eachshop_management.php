@@ -65,7 +65,7 @@
                 </td>
                 <?php
                  $proid= $row['pro_id'];
-                $sqor = pg_query($conn,"select or_qty from category where pro_id='$proid'");
+                $sqor = pg_query($conn,"select or_qty from orderdetail where pro_id='$proid'");
                 $sum  = "";
                 while($col=pg_fetch_array($sqor)){
                       $sum+=$col['or_qty'];
