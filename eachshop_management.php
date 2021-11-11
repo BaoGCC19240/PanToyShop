@@ -48,7 +48,7 @@
             {
                 $proid= $row['pro_id'];
                 $sq=pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
-
+                var_dump($sq);
 
 
                 ?>
