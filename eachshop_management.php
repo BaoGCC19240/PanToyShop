@@ -12,9 +12,9 @@
                 $idshop = $rShop['shop_id'];
                 $sum=3;
             ?>
-            <p style="text-align:center">
+            <h2 style="text-align:center">
                 Manage <?php echo $rShop['shop_name']; ?> shop
-            </p>
+            </h2>
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="90%">
 
 
