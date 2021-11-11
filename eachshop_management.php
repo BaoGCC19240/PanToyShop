@@ -50,7 +50,7 @@
                 var_dump($proid);
 
                 $sq= (int) pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
-                $num = pg_free_result($sq);
+                $num = pg_num_fields($sq);
 
 
                 ?>
