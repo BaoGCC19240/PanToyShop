@@ -10,9 +10,6 @@
 		$id=$_GET["id"];
 		$result = pg_query($conn,"Select * from category Where Cat_ID='$id'");
 		$row=pg_fetch_array($result);
-		$cat_id=htmlspecialchars(pg_escape_string($row['cat_id']));
-		$cat_name=htmlspecialchars(pg_escape_string($row["cat_name"]));
-		$cat_des=htmlspecialchars(pg_escape_string($row["cat_desc"]));
 
    if(isset($_POST["btnUpdate"]))
    {
@@ -53,14 +50,14 @@
 						    <label for="txtTen" class="col-sm-2 control-label">Category ID(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Catepgy ID" readonly 
-								  value='<?php echo $cat_id;?>'>
+								  value='<?php echo $row['cat_id'];?>'>
 							</div>
 					</div>	
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Category Name(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Catepgy Name" 
-								  value='<?php echo $cat_name;?>'>
+								  value='<?php echo $row['cat_name'];?>'>
 							</div>
 					</div>
                     
@@ -68,7 +65,7 @@
 						    <label for="txtMoTa" class="col-sm-2 control-label">Description(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" 
-								  value='<?php echo $cat_des; ?>'>
+								  value='<?php echo $row['cat_desc']; ?>'>
 							</div>
 					</div>
                     
