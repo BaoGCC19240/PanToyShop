@@ -57,15 +57,15 @@
 						    <label for="txtTen" class="col-sm-2 control-label">Category Name(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Catepgy Name" 
-								  value='<?php echo $row['cat_name'];?>'>
+								  value="<?php echo $row['cat_name'];?>">
 							</div>
 					</div>
                     
                     <div class="form-group">
 						    <label for="txtMoTa" class="col-sm-2 control-label">Description(*):  </label>
 							<div class="col-sm-10">
-								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" 
-								 <?php echo $row['cat_desc']; ?>>
+                                <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description"
+                                    value="<?php echo $row['cat_desc']; ?>" />
 							</div>
 					</div>
                     
