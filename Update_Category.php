@@ -10,9 +10,9 @@
 		$id=$_GET["id"];
 		$result = pg_query($conn,"Select * from category Where Cat_ID='$id'");
 		$row=pg_fetch_array($result);
-		$cat_id=$row['cat_id'];
-		$cat_name=$row['cat_name'];
-		$cat_des=$row['cat_desc'];
+		$cat_id=htmlspecialchars(pg_escape_string($row['cat_id']));
+		$cat_name=htmlspecialchars(pg_escape_string($row['cat_name']));
+		$cat_des=htmlspecialchars(pg_escape_string($row['cat_desc']));
 
    if(isset($_POST["btnUpdate"]))
    {
