@@ -47,8 +47,6 @@
             while($row=pg_fetch_array($result))
             {
                 $proid= $row['pro_id'];
-                var_dump($proid);
-
                 $sq=pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
                 $num = pg_fetch_array($sq);
                 $a=!empty($num['sum'])? $num['sum']:0;
