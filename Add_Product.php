@@ -57,6 +57,14 @@
 					if($pic['size']<=614400)
 					{
 
+						$id=htmlspecialchars(pg_escape_string($conn,$id));
+                        $proname=htmlspecialchars(pg_escape_string($conn,$proname));
+                        $detail=htmlspecialchars(pg_escape_string($conn,$detail));
+						$price=htmlspecialchars(pg_escape_string($conn,$price));
+                        $qty=htmlspecialchars(pg_escape_string($conn,$qty));
+                        $pic=htmlspecialchars(pg_escape_string($conn,$pic));
+						$category=htmlspecialchars(pg_escape_string($conn,$category));
+                        $shop=htmlspecialchars(pg_escape_string($conn,$shop));
 						$sq="select * from product where pro_id='$id' or pro_name='$proname'";
 						$result=pg_query($conn,$sq);
 						if(pg_num_rows($result)==0)

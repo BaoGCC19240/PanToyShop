@@ -14,7 +14,7 @@
 		$cat_name=$row['cat_name'];
 		$cat_des=$row['cat_desc'];
 	?>
-		<?php
+        <?php
    if(isset($_POST["btnUpdate"]))
    {
 	   $id=$_POST["txtID"];
@@ -33,6 +33,8 @@
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
+			   $name=htmlspecialchars(pg_escape_string($conn,$name));
+               $des=htmlspecialchars(pg_escape_string($conn,$des));
 			   pg_query($conn,"UPDATE category Set Cat_Name ='$name',Cat_Desc='$des' where Cat_ID='$id'");
 			   echo '<meta http-equiv="refresh" content="0,URL=?page=category_management"/>';
 		   }
@@ -42,7 +44,7 @@
 		   }
 	   }
    }
-     ?>  
+        ?>  
 <div class="container">
 	<h2>Updating Product Category</h2>
 
