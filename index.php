@@ -1,4 +1,17 @@
-<?php session_start(); ?>
+<?php
+session_start();
+function bind_Category_List($conn){
+			$sqlstring ="select cat_id, cat_name from category";
+			$result =pg_query($conn,$sqlstring);
+			echo "<div class='dropdown-content'>";
+			while($row=pg_fetch_array($result)){
+                $catname =$row['cat_name'];
+                $catid = $row['cat_id'];
+				echo  "<a href='?page=product&&id=$catid'>$catname</a>";
+			}
+			echo "</div>";
+		}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +36,16 @@
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="?page=product">Products</a></li>
+                        <li><div class="dropdown">
+    <button class="dropbtn">
+       Product
+        <i class="fa fa-caret-down"></i>
+    </button>
+                                <?php bind_Category_List($conn);  ?>
+    
+
+</div>
+                        </li>
                         <?php
                         if(!isset($_SESSION['admin']) or $_SESSION['admin']==0)
                         {
@@ -158,6 +180,9 @@
          }
          if($page=="order_management"){
              include_once('order_management.php');
+         }
+         if($page=="product"){
+             include_once('product.php');
          }
     }
     else
