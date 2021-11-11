@@ -89,6 +89,7 @@
             </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/npm.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/jquery-2.1.0.min.js"></script>
+
 
    
