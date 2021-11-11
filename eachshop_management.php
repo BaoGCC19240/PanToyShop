@@ -68,7 +68,7 @@
                 $sqor = pg_query($conn,"select or_qty from category where pro_id='$proid'");
                 $sum  = "";
                 while($col=pg_fetch_array($sqor)){
-                      $sum+=$row['or_qty'];
+                      $sum+=$col['or_qty'];
                 ?>
                 <td class="cotCheckBox">
                     <?php echo $sum; ?>
