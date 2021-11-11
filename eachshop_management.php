@@ -66,7 +66,7 @@
                     <?php echo $pro_num; ?>
                 </td>
                 <td class="cotCheckBox">
-                    <?php echo $row['pro_qty']-$pro_num); ?>
+                    <?php echo $row['pro_qty']-$pro_num; ?>
                 </td>
 
             </tr>
