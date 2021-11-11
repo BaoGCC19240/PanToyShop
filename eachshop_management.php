@@ -67,7 +67,7 @@
                 </td>
 
                 <td class="cotCheckBox">
-                    <?php echo $num; ?>
+                    <?php echo $num['sum']; ?>
                 </td>
 
             </tr>
