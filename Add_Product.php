@@ -33,6 +33,10 @@
 			$pic =$_FILES['txtImage'];
 			$category =$_POST['CategoryList'];
 			$shop =$_POST['ShopList'];
+
+				$proname=htmlspecialchars(pg_escape_string($conn,$proname));
+				$detail=htmlspecialchars(pg_escape_string($conn,$detail));
+
 			$err="";
 			if(trim($id)==""){
 				$err.="<li>Enter product ID,please</li>";
