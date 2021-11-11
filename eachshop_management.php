@@ -45,16 +45,10 @@
                 <?php
             include_once("connection.php");
             $No=1;
-            $result =pg_query($conn,"Select shop_name, pro_name, pro_qty, or_qty pro.pro_id from shop sh, product pro, orderdetail ord where ord.pro_id= pro.pro_id and sh.shop_id=pro.shop_id and sh.shop_id =$idshop");
-            $remainpro="";
+            $result =pg_query($conn,"Select shop_name, pro_name, pro_qty, or_qty  from shop sh, product pro, orderdetail ord where ord.pro_id= pro.pro_id and sh.shop_id=pro.shop_id and sh.shop_id =$idshop");
             while($row=pg_fetch_array($result))
             {
-
-                $proid = $row['pro.pro_id'];
-                $re=pg_query($conn, "select or_qty from orderdetail where pro_id= '$proid'");
-                while($a =pg_fetch_array($re)){
-                    $remainpro+=$a['or_qty']; 
-                    
+                $pro_num = !empty($row['or_qty']) ? $row['or_qty']:0;
 
                 ?>
 			<tr>
@@ -72,12 +66,12 @@
                     <?php echo $pro_num; ?>
                 </td>
                 <td class="cotCheckBox">
-                    <?php echo $row['pro_qty']-$pro_num; ?>
+                    <?php echo $row['pro_qty']-$pro_num); ?>
                 </td>
 
             </tr>
                 <?php  $No++;
-                }
+
             }
             ?> 
 			</tbody>
