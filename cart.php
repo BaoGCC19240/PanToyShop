@@ -56,7 +56,7 @@
                                 $us =$_SESSION['us'];
                                 $sq ="insert into orderdetail (pro_id, or_qty, or_amount,or_status,or_date, username) values ('$key','$val','$sum','unconfimred','$today','$us')";
                                 pg_query($conn,$sq);
-                                $qtyremain = pg_query($conn,"select pro_qty from product where pro_id = '$us'");
+                                $qtyremain = pg_query($conn,"select pro_qty from product where pro_id = '$key'");
                                 $newqty=$qtyremain - $val;
                                 pg_query($conn, "Update product set pro_qty = '$newqty' where pro_id = '$key'");
                                 unset($_SESSION['cart']);
