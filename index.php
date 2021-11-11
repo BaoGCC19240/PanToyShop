@@ -97,13 +97,13 @@ session_start();
                 <img src="images/menu.png" class="menu-icon"
                      onclick="menutoggle()">
             </div>
-            <?php 
+            <?php
             include_once('connection.php');
     if(isset($_GET['page'])){
         $page=$_GET['page'];
-            if($page=="Content.php"){
+            if($page=="Content.php"||$page=="product.php"){
 
-            } 
+            }
             else{
             ?>
         </div>
