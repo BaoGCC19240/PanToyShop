@@ -39,7 +39,9 @@ session_start();
                                        
                                    
                                     ?>
-                                    <a href="?page=product&&id='<?php echo $row['cat_id']; ?>'"><?php echo $row['cat_name']; ?></a>
+                                    <a href="?page=product&&id=<?php echo $row['cat_id'];?>">
+                                        <?php echo $row['cat_name']; ?>
+                                    </a>
                                     <?php }?>
                                 </div>
 
