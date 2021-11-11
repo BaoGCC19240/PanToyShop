@@ -7,7 +7,7 @@ function bind_Category_List($conn){
 			while($row=pg_fetch_array($result)){
                 $catname =$row['cat_name'];
                 $catid = $row['cat_id'];
-				echo  "<a href='?page=product&&id=$catid'>$catname</a>";
+				echo  "<a href='?page=product&&id='$catid''>$catname</a>";
 			}
 			echo "</div>";
 		}
@@ -36,15 +36,15 @@ function bind_Category_List($conn){
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="index.php">Home</a></li>
-                        <li><div class="dropdown">
-    <button class="dropbtn">
-       Product
-        <i class="fa fa-caret-down"></i>
-    </button>
+                        <li>
+                            <div class="dropdown">
+                        <button class="dropbtn">
+                        Product
+                        <i class="fa fa-caret-down"></i>
+                        </button>
                                 <?php bind_Category_List($conn);  ?>
     
-
-</div>
+                         </div>
                         </li>
                         <?php
                         if(!isset($_SESSION['admin']) or $_SESSION['admin']==0)
