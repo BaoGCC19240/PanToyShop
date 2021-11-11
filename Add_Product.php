@@ -33,8 +33,6 @@
 			$pic =$_FILES['txtImage'];
 			$category =$_POST['CategoryList'];
 			$shop =$_POST['ShopList'];
-
-
             $id=htmlspecialchars(pg_escape_string($conn,$id));
             $proname=htmlspecialchars(pg_escape_string($conn,$proname));
             $detail=htmlspecialchars(pg_escape_string($conn,$detail));
