@@ -35,9 +35,6 @@
                     <th align="center">
                         <strong>Product sold</strong>
                     </th>
-                    <th align="center">
-                        <strong>Product remain</strong>
-                    </th>
                 </tr>
              </thead>
 
@@ -69,6 +66,7 @@
                 $sum  = "";
                 while($col=pg_fetch_array($sqor)){
                       $sum+=$col['or_qty'];
+                      var_dump($sum);
                 }
                 ?>
                 <td class="cotCheckBox">
