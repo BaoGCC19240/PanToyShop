@@ -3,7 +3,7 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<div id="top">
-   <?php
+        <?php
     include_once("connection.php");
 	if(isset($_GET["id"]))
 	{
@@ -13,8 +13,7 @@
 		$cat_id=$row['cat_id'];
 		$cat_name=$row['cat_name'];
 		$cat_des=$row['cat_desc'];
-	?>
-        <?php
+
    if(isset($_POST["btnUpdate"]))
    {
 	   $id=$_POST["txtID"];
