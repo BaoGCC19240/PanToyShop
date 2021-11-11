@@ -88,7 +88,6 @@
  </form>
             </div>
 <script src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/npm.js"></script>
 <script src="js/jquery-2.1.0.min.js"></script>
 
 
