@@ -101,7 +101,7 @@ session_start();
             include_once('connection.php');
     if(isset($_GET['page'])){
         $page=$_GET['page'];
-            if($page=="Content.php"||$page=="product.php"){
+            if($page=="Content"||$page=="product"){
 
             }
             else{
