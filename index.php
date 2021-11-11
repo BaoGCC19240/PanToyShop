@@ -26,12 +26,12 @@ session_start();
                     <ul id="MenuItems">
                         <li><a href="index.php">Home</a></li>
                         <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">
+                            <div class="dropdowna">
+                                <button class="dropbtna">
                                     Product
                                     <i class="fa fa-caret-down"></i>
                                 </button>
-                                <div class="dropdown-content">
+                                <div class="dropdown-contenta">
                                     <?php 
                                     include_once('connection.php');
                                     $sq = pg_query($conn, "select cat_id, cat_name from category");
@@ -54,12 +54,12 @@ session_start();
                         else{
                         ?>
                         <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">
+                            <div class="dropdowna">
+                                <button class="dropbtna">
                                     Management
                                     <i class="fa fa-caret-down"></i>
                                 </button>
-                                <div class="dropdown-content">
+                                <div class="dropdown-contenta">
                                     <a href="?page=category_management">Category</a>
                                     <a href="?page=product_management">Product</a>
                                     <a href="?page=shop_management">Shop</a>
