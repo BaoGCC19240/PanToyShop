@@ -65,7 +65,7 @@
 						    <label for="txtMoTa" class="col-sm-2 control-label">Description(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtDes" id="txtDes" class="form-control" placeholder="Description" 
-								  value='<?php echo $row['cat_desc']; ?>'>
+								 <?php echo $row['cat_desc']; ?>>
 							</div>
 					</div>
                     
