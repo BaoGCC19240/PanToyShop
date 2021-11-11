@@ -168,7 +168,7 @@
 					<label for="txtTen" class="col-sm-2 control-label">Product Name(*):  </label>
 							<div class="col-sm-10">
 								  <input type="text" name="txtName" id="txtName" class="form-control" 
-								  placeholder="Product Name" value='<?php echo $proname;?>'/>
+								  placeholder="Product Name" value="<?php echo $proname;?>"/>
 							</div>
                 </div>   
                 <div class="form-group">   
