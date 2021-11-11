@@ -72,9 +72,8 @@
                 ?>
                 <td class="cotCheckBox">
                     <?php echo $sum; ?>
-                    <?php }
-?>                </td>
-
+                </td>
+                <?php } ?>
             </tr>
                 <?php $No++;
 
