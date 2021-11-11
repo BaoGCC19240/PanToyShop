@@ -69,11 +69,11 @@
                 $sum  = "";
                 while($col=pg_fetch_array($sqor)){
                       $sum+=$col['or_qty'];
+                }
                 ?>
                 <td class="cotCheckBox">
                     <?php echo $sum; ?>
                 </td>
-                <?php } ?>
             </tr>
                 <?php $No++;
 
