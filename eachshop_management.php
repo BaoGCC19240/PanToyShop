@@ -51,7 +51,7 @@
 
                 $sq=pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
                 $num = pg_fetch_array($sq);
-
+                $a=!empty($num['sum'])? $num['sum']:0;
                 ?>
 			<tr>
                 <td class="cotCheckBox">
@@ -66,7 +66,7 @@
                 </td>
 
                 <td class="cotCheckBox">
-                    <?php echo $num['sum']; ?>
+                    <?php echo $a; ?>
                 </td>
 
             </tr>
