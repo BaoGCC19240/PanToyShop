@@ -50,7 +50,7 @@
                 var_dump($proid);
 
                 $sq= (int) pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
-                var_dump($sq);
+                $num = pg_free_result($sq);
 
 
                 ?>
@@ -67,7 +67,7 @@
                 </td>
 
                 <td class="cotCheckBox">
-                    <?php echo $sq; ?>
+                    <?php echo $num; ?>
                 </td>
 
             </tr>
