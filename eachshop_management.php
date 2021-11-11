@@ -33,6 +33,9 @@
                     <th align="center">
                         <strong>Product sold</strong>
                     </th>
+                    <th align="center">
+                        <strong>Total</strong>
+                    </th>
                 </tr>
              </thead>
 
@@ -44,9 +47,10 @@
             while($row=pg_fetch_array($result))
             {
                 $proid= $row['pro_id'];
-                $sq=pg_query($conn,"select sum(or_qty) from orderdetail where pro_id='$proid'");
+                $sq=pg_query($conn,"select sum(or_qty) a, sum(or_amount) b from orderdetail where pro_id='$proid'");
                 $num = pg_fetch_array($sq);
-                $a=!empty($num['sum'])? $num['sum']:0;
+                $a=!empty($num['a'])? $num['a']:0;
+                $b=!empty($num['b'])? $num['b']:0;
                 ?>
 			<tr>
                 <td class="cotCheckBox">
@@ -62,6 +66,9 @@
 
                 <td class="cotCheckBox">
                     <?php echo $a; ?>
+                </td>
+                <td class="cotCheckBox">
+                    <?php echo $b; ?>
                 </td>
 
             </tr>
