@@ -33,14 +33,6 @@
 			$pic =$_FILES['txtImage'];
 			$category =$_POST['CategoryList'];
 			$shop =$_POST['ShopList'];
-            $id=htmlspecialchars(pg_escape_string($conn,$id));
-            $proname=htmlspecialchars(pg_escape_string($conn,$proname));
-            $detail=htmlspecialchars(pg_escape_string($conn,$detail));
-            $price=htmlspecialchars(pg_escape_string($conn,$price));
-            $qty=htmlspecialchars(pg_escape_string($conn,$qty));
-            $pic=htmlspecialchars(pg_escape_string($conn,$pic));
-            $category=htmlspecialchars(pg_escape_string($conn,$category));
-            $shop=htmlspecialchars(pg_escape_string($conn,$shop));
 
 			$err="";
 			if(trim($id)==""){
@@ -72,9 +64,9 @@
 						{
 							copy($pic['tmp_name'], 'images/' .$pic['name']);
 							$filePic=$pic['name'];
-							$sqlstring="insert into product( pro_id, pro_name, pro_price,pro_desc, pro_qty, pro_image, cat_id, shop_id)
+							$sqlsring="insert into product( pro_id, pro_name, pro_price,pro_desc, pro_qty, pro_image, cat_id, shop_id)
 							values('$id','$proname','$price','$detail','$qty','$filePic','$category','$shop')";
-							pg_query($conn,$sqlstring);
+							pg_query($conn,$sqlsring);
 							echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 						}
 						else
