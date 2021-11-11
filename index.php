@@ -5,7 +5,7 @@ function bind_Category_List($conn){
 			$result =pg_query($conn,$sqlstring);
 			echo "<div class='dropdown-content'>";
 			while($row=pg_fetch_array($result)){
-				echo  "<a href='?page=product&&id='".$row['cat_id'] ."''>".$row['cat_naem']."</a>";
+				echo  "<a href='?page=product&&id='".$row['cat_id'] ."''>".$row['cat_name']."</a>";
 			}
 			echo "</div>";
 		}
