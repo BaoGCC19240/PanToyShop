@@ -58,7 +58,7 @@
                                 pg_query($conn,$sq);
                                 $qtyremain = pg_query($conn,"select pro_qty from product where pro_id = '$key'");
                                 $newqty=$qtyremain - $val;
-                                pg_query($conn, "Update product set pro_qty = '$newqty' where pro_id = '$key'");
+                                pg_query($conn, "Update product set pro_qty = $newqty where pro_id = '$key'");
                                 unset($_SESSION['cart']);
 
                                 echo "<h3>Order Success</h3>";
