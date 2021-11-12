@@ -149,9 +149,6 @@ session_start();
         if($page=="update_customer"){
             include_once('Update_customer.php');
         }
-        if($page=="contact"){
-            include_once('contactus.php');
-        }
         if($page=="aquarium"){
             include_once('Aquarium.php');
         }
@@ -187,6 +184,9 @@ session_start();
          }
          if($page=="product"){
              include_once('product.php');
+         }
+         if($page=="contact"){
+             include_once('contactus.php');
          }
     }
     else
