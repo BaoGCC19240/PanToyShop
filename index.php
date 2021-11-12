@@ -47,9 +47,6 @@ session_start();
 
                             </div>
                         </li>
-                        <li>
-                            <a href="?page=contact">Contact Us</a>
-                        </li>
                         <?php
                         if(!isset($_SESSION['admin']) or $_SESSION['admin']==0)
                         {
@@ -184,9 +181,6 @@ session_start();
          }
          if($page=="product"){
              include_once('product.php');
-         }
-         if($page=="contact"){
-             include_once('contactus.php');
          }
     }
     else
