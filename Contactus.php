@@ -50,7 +50,6 @@ else{
 
  if(isset($_POST["btnSend"])){
    $us=$_POST["txtUsername"];
-   $email=$_POST["txtEmail"];
    $content=$_POST["txtcontent"];
    $err="";
    if($email==""){
@@ -65,8 +64,7 @@ else{
    else
    {
     include_once('connection.php');
-    mysqli_query($conn,"INSERT INTO feedback(Username, email, content) VALUES ('$us','$email','$content')")
-    or die(mysqli_error($conn));
+    pg_query($conn,"INSERT INTO feedback(Username, email, content) VALUES ('$us','$content')");
     echo"You have sended successfully";
    }
  }
@@ -75,11 +73,6 @@ else{
                                 <div class="col-lg-6 col-sm-12">
                                     <fieldset>
                                         <input name="txtUsername" type="text" id="name" placeholder="<?php echo $_SESSION['us'];?>" readonly>
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-6 col-sm-12">
-                                    <fieldset>
-                                        <input name="txtEmail" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" >
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-12">
