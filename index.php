@@ -93,7 +93,7 @@ session_start();
                         ?>
                     </ul>
                 </nav>
-                <a href="?page=cart"><img src="images/cart.png" width="30px" height="30px"><sup><?php echo $_SESSION['cart']; ?></sup></a>
+                <a href="?page=cart"><img src="images/cart.png" width="30px" height="30px"></a>
                 <img src="images/menu.png" class="menu-icon"
                      onclick="menutoggle()">
             </div>
